@@ -296,7 +296,7 @@ The framework is not closed. The vocabulary grows through use.
 
 ## Attribution
 
-Cognitive lens / meta-lens / prism / sub-prism / puzzle framework, in this specific operationalization, is the work of Alex Hristov (2026), developed through extended cross-model practice.
+Cognitive lens / meta-lens / prism / sub-prism / puzzle framework, in this specific operationalization, is the work of Aleksandar Hristov (2026), developed through extended cross-model practice.
 
 License: MIT.
 
