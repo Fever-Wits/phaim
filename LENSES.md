@@ -183,7 +183,7 @@ In cross-model conversation, Gemini engaged with lens vocabulary without prior t
 
 ## Attribution
 
-Cognitive lens / meta-lens / prism / sub-prism / puzzle framework, in this specific operationalization, is the work of Alex Hristov (2026), developed through extended collaboration with Claude (Opus via Claude Code) and validated cross-model with Gemini and local Qwen.
+Cognitive lens / meta-lens / prism / sub-prism / puzzle framework, in this specific operationalization, is the work of Aleksandаr Hristov (2026), developed through extended collaboration with Claude (Opus via Claude Code) and validated cross-model with Gemini and local Qwen.
 
 Underlying cognitive science traditions referenced or convergent with this framework: Cohen & Squire (procedural memory), Sumers et al. CoALA (cognitive architectures for language agents), de Bono (Six Thinking Hats), Munger (latticework of mental models), Klein (pre-mortem), Kross (self-distancing), Flavell (metacognition), Bohr (complementarity principle).
 
