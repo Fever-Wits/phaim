@@ -64,7 +64,7 @@ specifics.
 
 ## Contact
 
-Alex Hristov — alex@hgs.name, a.hristow@gmail.com
+Alexandar Hristov — alex@hgs.name, a.hristow@gmail.com
 
 ## License
 
