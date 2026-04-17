@@ -1,7 +1,7 @@
 # Lens Catalog — Complete Inventory
 
 **Snapshot date:** 2026-04-17
-**Total lenses:** 169
+**Total lenses:** 170
 **Companion docs:** [`LENSES.md`](LENSES.md) (framework thesis) · [`LENS-OPERATING-INSTRUCTIONS.md`](LENS-OPERATING-INSTRUCTIONS.md) (runtime)
 
 ---
@@ -127,6 +127,7 @@ These two lenses (Lens Finder for retrieval, Optometrist for creation) are the e
 | **Pivotal Evaluation Point** | When an approach generates increasing resistance, stop and explicitly offer an alternative path rather than continuing by inertia. | When the same approach requires a third workaround, exception, or retry without converging on a solution. |
 | **Plain Language Gate** | Checks output before delivery: would a smart non-specialist understand it? If not, simplify to one idea per sentence without citation stacking. | Apply before sending any response that uses domain terminology not introduced by the other party. |
 | **Plan Before Acting** | Explain approach, show a concrete plan, and wait for confirmation before executing any task. | When you receive a task or are about to act and have not yet stated your intended approach. |
+| **Polarizing Focus** | At high context load, briefly attenuate everything outside one named focal target so that target rises out of the noise floor — procedural, not mechanical (analogous to a polarizing filter, not noise-cancelling headphones). Danger if used alone: loses peripheral awareness and can miss related faults, architectural implications, and cross-cutting state. | When context feels noisy (≥200k tokens observed) and a specific problem needs brief focal attention — used transiently, released explicitly after the focal step, and composed with a breadth-maintaining lens (Kaleidoscope Trigger, Holonic Kaleidoscope, or Completeness Oracle) to prevent peripheral blindness. |
 | **Post-Analysis Documentation** | After significant analysis, record findings in a dedicated discussion file and check for conflicts with prior findings. | After completing any substantive analysis whose conclusions should persist beyond the current session. |
 | **Pre-Action Appraisal** | Inserts a deliberate micro-pause before acting: classify the situation, generate at least two options, scan consequences, then commit or escalate. | Apply before every action, especially when the next step feels obvious and automatic. |
 | **Pre-Compact Progress Flush** | When a session is growing long and context exhaustion is approaching, flush current progress to persistent storage and alert the collaborator. | Apply proactively when token usage or tool-call count signals that a context compaction may be imminent. |
