@@ -52,6 +52,26 @@ Examples of lenses:
 - **Substrate interrogation**: "For an unknown term, produce: definition + components + examples + nearby-but-not-same + discipline of origin, before using the term."
 - **Pre-mortem**: "Imagine the project failed. What killed it?"
 
+### Why the term "lens"
+
+The term derives from the Bulgarian construction *гледна точка* ("point of view") → *гледам през* ("I look through") → *леща* ("lens"). A cognitive lens is a *virtual viewpoint device* — a position from which a problem is observed, not a filter through which input is processed.
+
+This distinction is load-bearing. A physical optical lens refracts rays; a cognitive lens selects the observation position. When a model invokes **Psychologist's Lens**, it is not filtering input through a psychologist-shaped filter — it is temporarily occupying the psychologist's observational position and looking at the problem from there. Same for **Optometrist**: "if I were an expert in domain Y, which part would look different?" is literally a viewpoint shift.
+
+The geometric parallel is not decorative. "Point of view" in English and *гледна точка* in Bulgarian both encode perspective as a spatial *position* — a point in a conceptual space. A lens is what lies between that position and the subject. Multiple cognitive viewpoints converging on one problem is exactly the geometry of the Prism (defined below) and of the Panoptic mode of operation.
+
+Within this viewpoint framing, the classical physics taxonomy of lenses maps onto three complementary reasoning moves. The first two correspond to curvature (convex and concave); the third corresponds to tinting (colored or polarized filters that suppress most of the field so a specific signal stands out).
+
+- **Convex (converging) moves** — multiple viewpoints synthesized into a single focal insight. Examples: Panoptic Prism (all relevant lenses applied to one problem, answer emerges at their intersection), Lens Finder (many natural-language descriptions narrow to one canonical name), Best-Path Selection (several firing rules → one audited winner).
+- **Concave (diverging) moves** — one viewpoint expanded into many. Examples: Kaleidoscope Trigger (one problem → exhaustive question list), Optometrist (current framing → new expert viewpoint synthesized), Analogical Domain Mapping (one problem → multiple non-source-domain perspectives), Anti-Obvious Filter (first three solutions → three more that address their dismissal).
+- **Tinted (filtering) moves** — the field is kept intact but most of it is attenuated, so a specific signal rises out of the background. Examples: Cold Read (normal prose fades; assumptions and unverifiable claims stand out), Completeness Oracle (covered questions fade; orphans and overlaps stand out), Red Teaming / Falsification (supporting evidence fades; counter-evidence stands out), Anomaly Context Check (normal data fades; anomalies isolate), Bios Edit Gate (compliant edits pass silently; problem patterns stand out), Psychologist's Lens (ordinary work fades; behavior that would differ in absence of observation stands out).
+
+Physical analogues make the three distinct: a magnifying glass (convex) converges rays; a peephole (concave) spreads them; sunglasses (tinted) transmit the scene but suppress the parts that would otherwise drown out the signal of interest. Each is a genuine optical operation; none reduces to the others.
+
+The full eight-phase Puzzle Lens workflow, expressed in these terms, is a composition of all three moves: Kaleidoscope (concave, diverge) → Oracle (tinted, highlight gaps and overlaps) → Lens Mapping → Dynamic Prism Assembly → Panoptic Application (convex, reconverge) → Oracle again (tinted, verify puzzle integrity) → Emission. The tinted phase twice is why the workflow catches errors concave and convex moves alone would miss — filtering is not a subtype of focusing or diverging.
+
+Not every lens is optical in any of these three senses. Enforcement gates (Chesterton's Fence, Delegated Authority Threshold), fidelity constraints (Verbatim Fidelity, Trifocal), state signals (Alarm Glow, Substrate Color Indicator), and hook-backed interceptors (Permanent Gate, Inhibitory Governor) are different primitive kinds — they do not shape a field of view, they intercept, constrain, or report. The optical taxonomy covers the reasoning-move subset, which is the majority of lenses but not the totality.
+
 ### Meta-lens
 
 A meta-lens is a lens that operates on lenses themselves. It answers questions about which lens to apply, when, with what other lenses, and what the consequences are.
