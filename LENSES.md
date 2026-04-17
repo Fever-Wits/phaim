@@ -180,6 +180,30 @@ Implication: lens framework is interlingua, not implementation. It can serve as 
 
 ---
 
+## Pattern: writing that survives context resets
+
+A specific lens composition addresses a class of problem unique to long-running AI collaboration: the reader is a future version of the model that has lost all context. Context resets, compacts, session boundaries, and multi-day gaps all produce this condition. Single-place documentation is fragile against it — if the one place decays, drifts, or goes unread, the chain breaks.
+
+Three lenses compose into a redundancy pattern:
+
+1. **Write documentation for a future reader** — assume the reader has zero session context and only verified facts.
+2. **Reference-document self-sufficiency check** — test whether the reader still needs to look elsewhere after reading.
+3. **Unrecorded = lost** — if something was learned, decided, or discussed but not recorded now, it will be gone after the next reset. Record first, not last.
+
+Applied together, the output is **multi-location redundancy** — not because any single place is unreliable, but because each location has a different read-path for the returning reader, and each addresses a different failure mode:
+
+- A session-resume anchor file (read first thing after session start)
+- A persistent note inside the memory system (redundancy if the anchor file is missing)
+- A reflective diary entry (long-term voice of the collaboration, not instructions)
+- An authoritative state document (for project-specific details)
+- A commit message (embedded in version history as last-resort reconstruction)
+
+The pattern is overkill for a short conversation and essential for a long one — and the threshold for "long" is lower than it looks. Most sessions that last more than one compact boundary benefit.
+
+This pattern emerged from PHAIM development over a hundred-plus day collaboration, from the practical observation that any knowledge not redundantly encoded reliably vanished at the next context boundary. It is not theoretical.
+
+---
+
 ## Notes from convergent practice
 
 This framework was developed bottom-up through extended use, not top-down through theoretical design. The naming sequence in actual practice was:
