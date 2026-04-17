@@ -1,7 +1,7 @@
 # Cognitive Lens Framework: Specification and Usage
 
-**Status:** Draft for inclusion in https://github.com/Fever-Wits/phaim
-**Version:** 2026-04-15
+**Status:** Published at https://github.com/Fever-Wits/phaim
+**Version:** 2026-04-17
 **License:** MIT
 **Contact:** alex@hgs.name, a.hristow@gmail.com
 
