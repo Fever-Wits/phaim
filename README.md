@@ -43,6 +43,12 @@ encodes cognitive procedures as semantic content, and naming a
 procedure activates it across any model with access to that shared
 training distribution.
 
+Each lens is a named activation handle for a reasoning skill the model
+already has from training. Naming the lens makes the skill explicitly
+invocable — composable, inspectable, and transferable across models
+that share the underlying training distribution. The framework does not
+teach new capabilities; it makes existing ones callable.
+
 Framework documentation:
 
 * [LENSES.md](LENSES.md) — Framework specification (definitions, cross-model usage, attribution)
