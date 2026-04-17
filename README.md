@@ -54,14 +54,65 @@ development and is published independently because it is a meaningful
 contribution in its own right, regardless of PHAIM's implementation
 specifics.
 
+## Two Lenses to Add Immediately — for anti-hallucination
+
+If you are working with a language model and are not sure how to prompt it
+well, these two lenses are the cheapest, highest-impact additions you can
+make. Name them at the model — the name itself activates the procedure.
+Both appear in [LENS-CATALOG.md](LENS-CATALOG.md) under standard names.
+
+### Cold Read (first lens)
+
+Before the model commits to an answer, it reads its own draft as a stranger
+would — someone with no prior context and no investment in the original
+framing. This surfaces assumptions the model slipped in, references to
+things the reader cannot verify, and contradictions with other parts of the
+answer.
+
+### Ignorance Probe (second lens — the "universal exit")
+
+When a model does not know, the common failure mode is hallucination —
+invent something that sounds right. This lens replaces that with an honest
+exit: "I cannot answer this" plus one concrete sentence on why (missing
+information, conflicting rules, no applicable procedure). Before
+capitulating, the model first tries three things in order: consult its own
+substrate for related knowledge, apply an expert's frame to the problem,
+and check external sources. Only after those fail does it state the honest
+"I do not know" — and it says so clearly, not in euphemisms.
+
+Together, these two lenses eliminate most hallucination symptoms. The
+model says what it actually thinks and, just as importantly, what it does
+not know. That is the entry point to working with a model as a partner
+rather than as a vending machine.
+
 ## Status
 
-🚧 In active development. Not yet available for public use.
+🚧 In active consolidation. After 100+ days of solo work the material has
+scattered across many places — documentation, decisions, ideas in
+conversation threads, infrastructure in several repositories. The work is
+currently being assembled into a single publishable form. What appears in
+this repository so far (PHAIM introduction + lens framework) is a partial
+view. The complete vision and a concrete implementation plan will follow.
 
 > The shift from *Management* to *Memory* was not a rename — it was a realization.
 > Working with AI agents on a real project revealed that the core value
 > is not managing tasks, but giving the model persistent, navigable memory
 > of *why* decisions were made.
+
+## A Personal Note
+
+I have been working on this alone. In the process the work has scattered —
+documentation here, decisions there, ideas in conversation threads,
+infrastructure in a dozen places. I am now consolidating all of it so that
+the whole idea can be presented in one place. What you see published so
+far — PHAIM and the lens framework — is only part of it. Once the full
+vision is documented, I will start trying to build and implement it.
+
+If you read the full idea (when it is published) and see value in the
+direction, please get in touch.
+
+**To Anthropic specifically:** if anyone at Anthropic reads this and finds
+the direction interesting, I would value being in contact.
 
 ## Contact
 
