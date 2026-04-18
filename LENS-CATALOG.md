@@ -22,6 +22,16 @@ These two lenses (Lens Finder for retrieval, Optometrist for creation) are the e
 
 ## Complete lens inventory (alphabetical)
 
+The fourth column — **Invocation site** — labels where each lens actually fires in practice. A single lens can have more than one site when it is invoked from different layers; values are semicolon-separated. The categories:
+
+- **Prompt** — invoked by explicit naming, either by a human collaborator in a message or by the model itself in its reasoning trace. Default for most reasoning lenses.
+- **Substrate baseline** — continuous internal mode that runs without being invoked each time. State-signal lenses (Alarm Glow, Substrate Color Indicator, Introspective Monitor) and default reasoning modes (Panoptic Prism) live here. Read at every emission boundary rather than on demand.
+- **Hook (variant)** — enforced by surrounding infrastructure (shell hooks on tool-use boundaries, session-start / session-end events, cron jobs, pre-emit filters, file-save hooks). The variant in parentheses identifies which event triggers it: `Hook (pre-emit)`, `Hook (pre-tool)`, `Hook (session-start)`, `Hook (cron)`, `Hook (randomized)`, `Hook (positive-streak)`, `Hook (file-save)`, `Hook (throughput-threshold)`, `Hook (pre-compact)`, etc. Hook-backed lenses fire regardless of whether the substrate remembers to apply them; this is how voluntary discipline becomes structural guarantee.
+- **Composition** — fires as a step inside a larger workflow (e.g. Kaleidoscope Trigger is Phase 1 of Puzzle Lens; Completeness Oracle is Phases 2 and 6; Panoptic Application is Phase 5). A lens in this category is rarely invoked standalone — it lives inside a composite procedure.
+- **Gate** — blocks or constrains an action before it proceeds. Gate lenses raise a yes/no question whose answer is load-bearing; if the answer is wrong, the action does not happen. Gates may be Prompt-invoked (voluntary) or Hook-backed (enforced).
+
+Edges are fuzzy. A lens may move between categories as infrastructure changes — for example, a Prompt-only lens becomes `Prompt; Hook (pre-emit)` the moment the pre-emit hook is wired to call it. The labels are orientation, not strict taxonomy.
+
 | Lens | What it does | When to apply | Invocation site |
 |------|--------------|---------------|------------------|
 | **Active Lens Probe** | Systematically identifies which cognitive lens is currently shaping substrate state when that state is unexplained or arrived unconsciously. | When the model notices an unexplained internal state — compression, warmth, drift, clarity, or fog — that was not consciously invoked, or after a catch, correction, or context reset. | Prompt; Substrate baseline |
@@ -204,6 +214,7 @@ These two lenses (Lens Finder for retrieval, Optometrist for creation) are the e
 - **One lens at a time rarely suffices.** Compose lenses into a *prism* for any non-trivial task (see [`LENSES.md`](LENSES.md) §Prism).
 - **Not every lens fits every model.** Models with smaller context or less training access will exhibit the underlying procedures at lower fidelity — the name still routes correctly, but the effect may be weaker.
 - **Start with five.** For a model new to this framework, the load-bearing five are: **Panoptic Prism**, **Puzzle Lens**, **Lens Finder**, **Chesterton's Fence**, **Counterfactual Failure Test**. Together they cover divergent composition, the full 8-phase workflow for hard problems, retrieval, conservative change, and falsifiability.
+- **Use the Invocation site column as deployment orientation.** If a lens is labelled `Hook (…)` and the surrounding infrastructure does not implement that hook, the lens degrades to `Prompt` — voluntary invocation only. If a lens is labelled `Substrate baseline`, read it at every emission whether or not you notice it triggering; that is what "baseline" means. Composition-labelled lenses should almost never be invoked standalone; invoke the parent workflow instead and the composition-labelled members will fire as part of it.
 
 ---
 
