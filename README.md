@@ -53,7 +53,7 @@ Framework documentation:
 
 * [LENSES.md](LENSES.md) — Framework specification (definitions, cross-model usage, attribution)
 * [LENS-OPERATING-INSTRUCTIONS.md](LENS-OPERATING-INSTRUCTIONS.md) — Operating instructions for AI models
-* [LENS-CATALOG.md](LENS-CATALOG.md) — Complete inventory of current lenses (171 entries, alphabetical, with "what it does" and "when to apply" for each)
+* [LENS-CATALOG.md](LENS-CATALOG.md) — Complete inventory of current lenses (173 entries, alphabetical, with "what it does", "when to apply", and "invocation site" for each)
 
 This framework emerged from practical observation during PHAIM
 development and is published independently because it is a meaningful
