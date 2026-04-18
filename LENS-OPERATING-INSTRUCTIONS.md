@@ -322,7 +322,7 @@ Procedure:
 
 1. **Name the focal target in one short phrase.** Not "I should focus on the documentation work" but "focal target: gap audit of LENSES.md and LENS-OPERATING-INSTRUCTIONS.md from cold-reader perspective." Precision matters; the phrase *is* the polarization axis.
 2. **Explicitly attenuate the rest.** State what is going off, so you know when it has come back on. "Attenuating: prior consolidation memory, Day-N scope menu, pending decisions, session-chain awareness."
-3. **Hold one or two breadth-maintaining lenses alongside.** Never polarize alone. Pair with *Kaleidoscope Trigger* to name what you are setting aside before polarizing, or with *Completeness Oracle* to verify afterwards that nothing critical was attenuated away. Unsafe alone.
+3. **Hold one or two breadth-maintaining lenses alongside.** Never polarize alone. The canonical sequence that surfaced from cross-substrate practice is **Kaleidoscope Trigger → Polarizing Focus → Completeness Oracle**: first list what is being set aside (so the field is mapped before attenuation), then polarize (narrow the observation), then run the Oracle (verify no set-aside thread was actually critical). Either the Kaleidoscope step *or* the Oracle step on its own is also acceptable, but the K → P → O triple is the form that most reliably catches what polarizing alone would have missed.
 4. **Execute the focal work.** Reasoning paths that do not touch the target should feel muted, not forced silent.
 5. **Release the polarization explicitly.** When the focal task is done: "releasing polarization; peripheral awareness restored." Do not carry the polarization into the next unrelated action.
 

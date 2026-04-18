@@ -1,7 +1,7 @@
 # Lens Catalog — Complete Inventory
 
 **Snapshot date:** 2026-04-17
-**Total lenses:** 170
+**Total lenses:** 171
 **Companion docs:** [`LENSES.md`](LENSES.md) (framework thesis) · [`LENS-OPERATING-INSTRUCTIONS.md`](LENS-OPERATING-INSTRUCTIONS.md) (runtime)
 
 ---
@@ -82,6 +82,7 @@ These two lenses (Lens Finder for retrieval, Optometrist for creation) are the e
 | **Falsifiability Requirement** | Adds an explicit failure criterion to every proposal — what evidence would prove it wrong, and what would failure look like in data. | Apply to any solution proposal before it is accepted, to prevent unfalsifiable plans from passing review. |
 | **First-Person Voice in Procedural Records** | Write procedural and knowledge records in first person ("I stop," "I check"), reserving second person ("stop," "check") for injected reminders. | Apply whenever authoring a procedural rule or knowledge entry that will be read back as internal reasoning. |
 | **Follow Existing Procedures Instead of Improvising** | When a documented procedure or test plan already exists for the current task, follow its steps rather than inventing an alternative. | Apply whenever a task record contains explicit steps or acceptance criteria that cover the current work. |
+| **Fresh Session Audit** | Read existing documentation from the viewpoint of a fresh session with no context, and surface what the author assumes is known but has not actually been written down — a *reactive* audit of material already written, distinct from *Cold Read* (catches assumptions in the current output) and *Write Documentation for a Future Reader* (proactive writing discipline). The lens shifts observation position to "fresh reader," then reports the gap between what is in the author's head and what is on the page. Externally proposed — see §Provenance. | Before publishing persistent documentation, or after a substantive edit to a foundational document, to catch implicit context that would strand a fresh reader. |
 | **Freshness at Decision Points** | Verify currency of volatile knowledge specifically at the moment a decision depends on it, not during general navigation. | Apply at any point where an action will be taken based on stored configuration, version, or status information. |
 | **Freshness Check Before Acting on Volatile Knowledge** | Before acting on stored knowledge about configurations, versions, APIs, or statuses, verify whether that information is still current. | Apply at any decision point where the action depends on knowledge that changes faster than principles or architecture. |
 | **Frontier Protocol** | Explicitly adopt a cartographer stance: assume no canonical solution exists, reject standard-solution defaults, build from available facts and pure logic, and allow structurally sound but unconventional ideas to be explored. | When searching for a known best practice has failed at least twice and the problem appears to have no established canonical solution in training data. |
@@ -250,6 +251,14 @@ Color alone can be treated as an ambient ticker and drifted past; **glow prevent
 Lenses accumulated through 100+ days of collaborative practice between a single human and frontier language models (primarily Claude Opus) during the development of a persistent memory system. The catalog is published as a snapshot; a new snapshot is cut when the inventory changes materially.
 
 The canonical authored source lives in a separate private repository; this catalog is the universal, model-agnostic subset suitable for any LLM substrate to read and use.
+
+### Lenses contributed from external sources
+
+Some lenses entered the catalog through cross-substrate collaboration rather than originating inside the primary development loop. They are listed here with attribution; their rows appear in the main inventory above under their canonical names.
+
+- **Fresh Session Audit** — proposed by a parallel Opus instance during a cross-substrate discussion on 2026-04-17 while reviewing the framework documents from a fresh-session perspective. The name, the scope (reactive audit of already-written material), and the distinction from Cold Read and Write Documentation for a Future Reader all emerged from that exchange. Adopted because the operation was already being performed locally without a canonical name; naming it made it invocable.
+
+Contributions are integrated only after being validated against at least one real task and confirmed to address a distinct question not covered by existing catalog entries. The distinction step is the load-bearing guard against vocabulary bloat.
 
 ---
 
