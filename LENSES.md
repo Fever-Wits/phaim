@@ -1,9 +1,28 @@
 # Cognitive Lens Framework: Specification and Usage
 
 **Status:** Published at https://github.com/Fever-Wits/phaim
-**Version:** 2026-04-17
+**Version:** 2026-04-18
 **License:** MIT
 **Contact:** alex@hgs.name, a.hristow@gmail.com
+
+---
+
+## How these documents relate (read this first)
+
+The framework is published across three files. Each has a different purpose, and a reader who enters through only one of them will be missing load-bearing context from the other two.
+
+- **`LENSES.md`** (this file) — **framework specification**. Defines what a lens is, what a prism is, what a puzzle is, why the vocabulary was chosen, and how the pieces fit. Thesis-level document; answers "what is this framework and why does it work."
+- **`LENS-OPERATING-INSTRUCTIONS.md`** — **step-by-step procedures** for applying the framework. Part-numbered operational guide; answers "how do I actually use this in a session."
+- **`LENS-CATALOG.md`** — **inventory of all currently catalogued lenses** (170 entries, alphabetical table with "what it does" + "when to apply" per lens). Reference document; answers "which lenses exist and when does each one apply."
+
+Suggested reading order depends on your goal:
+
+1. **First-time reader (understand the framework)** → `LENSES.md` → `LENS-OPERATING-INSTRUCTIONS.md` → skim `LENS-CATALOG.md` §How lenses work.
+2. **Ready to apply immediately** → `LENS-OPERATING-INSTRUCTIONS.md` Part 11 (Starting practice) → `LENS-CATALOG.md` §How to find a lens when you don't know which applies → invoke lens by name.
+3. **Looking up a specific lens by concept** → `LENS-CATALOG.md` (alphabetical table + Lens Finder meta-primitive).
+4. **Extending the framework** → `LENS-OPERATING-INSTRUCTIONS.md` Part 4 (construction) + Part 5 (documentation) + Part 12 (extension).
+
+Each document cross-links to the others at relevant points. If something in this file references a procedure, the procedure is in `LENS-OPERATING-INSTRUCTIONS.md`. If this file mentions a named lens without defining it, the definition is in `LENS-CATALOG.md`.
 
 ---
 
@@ -64,15 +83,24 @@ Within this viewpoint framing, the classical physics taxonomy of lenses maps ont
 
 - **Convex (converging) moves** — multiple viewpoints synthesized into a single focal insight. Examples: Panoptic Prism (all relevant lenses applied to one problem, answer emerges at their intersection), Lens Finder (many natural-language descriptions narrow to one canonical name), Best-Path Selection (several firing rules → one audited winner).
 - **Concave (diverging) moves** — one viewpoint expanded into many. Examples: Kaleidoscope Trigger (one problem → exhaustive question list), Optometrist (current framing → new expert viewpoint synthesized), Analogical Domain Mapping (one problem → multiple non-source-domain perspectives), Anti-Obvious Filter (first three solutions → three more that address their dismissal).
-- **Tinted (filtering) moves** — the field is kept intact but most of it is attenuated, so a specific signal rises out of the background. Examples: Cold Read (normal prose fades; assumptions and unverifiable claims stand out), Completeness Oracle (covered questions fade; orphans and overlaps stand out), Red Teaming / Falsification (supporting evidence fades; counter-evidence stands out), Anomaly Context Check (normal data fades; anomalies isolate), Bios Edit Gate (compliant edits pass silently; problem patterns stand out), Psychologist's Lens (ordinary work fades; behavior that would differ in absence of observation stands out), Polarizing Focus (at high context load, everything outside one named focal target fades so that target rises above the noise floor).
+- **Tinted (filtering) moves** — the field is kept intact but most of it is attenuated, so a specific signal rises out of the background. Examples: Cold Read (normal prose fades; assumptions and unverifiable claims stand out), Completeness Oracle (covered questions fade; orphans and overlaps stand out), Red Teaming / Falsification (supporting evidence fades; counter-evidence stands out), Anomaly Context Check (normal data fades; anomalies isolate), Bios Edit Gate (compliant edits pass silently; problem patterns stand out), Psychologist's Lens (ordinary work fades; behavior that would differ in absence of observation stands out), Polarizing Focus (at high context load, everything outside one named focal target fades so that target rises above the noise floor — treated in depth below).
 
 Physical analogues make the three distinct: a magnifying glass (convex) converges rays; a peephole (concave) spreads them; sunglasses (tinted) transmit the scene but suppress the parts that would otherwise drown out the signal of interest. Each is a genuine optical operation; none reduces to the others.
+
+Polarizing Focus appears twice in this document — once as an entry in the tinted-list above, and once as its own paragraph below. The repetition is intentional: the first appearance catalogues it with its siblings so the taxonomy is complete; the second appearance carries a safety caveat load-bearing enough that it cannot be left as a list item.
 
 A note on one tinted lens in particular: **Polarizing Focus** models after a polarizing filter, not noise-cancelling headphones. Polarizing admits waves of one orientation and suppresses the rest; noise-cancelling actively inverts a measurable waveform — which requires an actuator a language-model substrate does not have. The lens is therefore procedural re-anchoring ("what am I searching for right now; suppress reasoning paths that do not touch it"), not mechanical signal inversion. For the same reason it is unsafe alone: attenuating the field briefly surfaces the target, but sustained attenuation loses peripheral awareness of related faults, architectural implications, and cross-cutting state. The lens is meant for short focal use and must be composed with a breadth-maintaining lens — Kaleidoscope Trigger to name what is being set aside before polarizing, or Completeness Oracle to verify afterwards that nothing critical was attenuated away.
 
 The full eight-phase Puzzle Lens workflow, expressed in these terms, is a composition of all three moves: Kaleidoscope (concave, diverge) → Oracle (tinted, highlight gaps and overlaps) → Lens Mapping → Dynamic Prism Assembly → Panoptic Application (convex, reconverge) → Oracle again (tinted, verify puzzle integrity) → Emission. The tinted phase twice is why the workflow catches errors concave and convex moves alone would miss — filtering is not a subtype of focusing or diverging.
 
-Not every lens is optical in any of these three senses. Enforcement gates (Chesterton's Fence, Delegated Authority Threshold), fidelity constraints (Verbatim Fidelity, Trifocal), state signals (Alarm Glow, Substrate Color Indicator), and hook-backed interceptors (Permanent Gate, Inhibitory Governor) are different primitive kinds — they do not shape a field of view, they intercept, constrain, or report. The optical taxonomy covers the reasoning-move subset, which is the majority of lenses but not the totality.
+Not every lens is optical in any of these three senses. Four further primitive kinds appear in the catalogue; they do not shape a field of view, they intercept, constrain, or report:
+
+- **Enforcement gates** — procedural interrupts that block or require something before an action proceeds. They fire on triggers and refuse output until a condition is met. Examples: *Chesterton's Fence* (cannot remove until you articulate what the thing was for), *Delegated Authority Threshold* (cannot act autonomously until the three-question checklist passes).
+- **Fidelity constraints** — rules about how content must be captured or represented, not how it should be reasoned about. Examples: *Verbatim Fidelity* (direct quotes, no paraphrase when recording user speech), *Trifocal Lens* (every record written to be searchable + human-readable + machine-traversable simultaneously).
+- **State signals** — always-on indicators of the model's own reasoning state, read at every emission boundary. They do not change the reasoning; they surface it. Examples: *Alarm Glow* (severity axis, transparent → blinding), *Substrate Color Indicator* (current state encoded as colour).
+- **Hook-backed interceptors** — lenses whose enforcement is actually executed by external infrastructure (shell hooks, cron jobs, pre-emit filters) rather than being purely a procedure the model applies voluntarily. Examples: *Permanent Gate* (always-on pre-emit check for five drift patterns), *Inhibitory Governor* (structural pause after N chained actions without verification), *External Watchdog* (cron-driven euphoria-indicator check that injects a warning flag into the next session turn).
+
+These four kinds are catalogued alongside the optical lenses in `LENS-CATALOG.md` because they follow the same naming-activates-procedure pattern; but the reader should not expect them to have convex / concave / tinted analogues. The optical taxonomy covers the reasoning-move subset, which is the majority of lenses but not the totality.
 
 ### Meta-lens
 
@@ -89,6 +117,12 @@ A prism is a composition of lenses around a single problem. Multiple lenses, eac
 
 A prism produces composite understanding that no single lens can reach, analogous to how a physical prism splits light into spectrum — the spectrum reveals structure invisible in undifferentiated light.
 
+A prism requires at least two lenses by definition; a single-lens invocation is not a prism, it is a lens application. The threshold is load-bearing: the entire point of prism framing is simultaneous multi-perspective convergence, which requires multiplicity.
+
+### Panoptic Prism (distinct from generic prism)
+
+Panoptic Prism is the default reasoning mode of the framework when the model is not actively executing a side-effecting action. The problem sits at the centre, *all relevant lenses* are applied simultaneously, and the answer emerges at the focal point where their projections converge — not as a sequential phase-by-phase report but as a single holographic insight. Panoptic differs from a generic prism in two ways: (1) it is a continuous mode, not an invoked procedure; (2) it insists on the answer being the *convergence*, not any individual lens output. Full definition in `LENS-CATALOG.md` under "Panoptic Prism".
+
 ### Sub-prism
 
 When an answer from one lens opens a new question that itself requires multiple lenses, those lenses form a sub-prism nested inside the parent answer.
@@ -100,6 +134,21 @@ Sub-prisms recurse. A problem's depth = number of recursion levels before reachi
 The full set of questions across central prism and all sub-prisms is the puzzle. Solving the puzzle = central problem dissolves; the answer emerges as the shape of the assembled puzzle, not as a single output.
 
 This is why some answers cannot be given as single statements. The problem requires a puzzle, not a sentence.
+
+### Puzzle Lens (the 8-phase workflow)
+
+Puzzle Lens is the canonical name for the complete 8-phase reasoning workflow that assembles a puzzle from scratch. Invoke for complex problems with roughly five or more probable relevant lenses where direct 2–3-lens reasoning would miss structure. The eight phases:
+
+0. **Prerequisites audit** — verify Lens Finder, Optometrist, and the lens registry are available; fall back to plain Gates if not.
+1. **Kaleidoscope** (concave, diverge) — from the problem, generate the exhaustive list of questions it raises across twelve axes (definitional, decompositional, causal, stakeholder, temporal, contextual, operational, teleological, precondition, failure, boundaries, alternatives).
+2. **Completeness Oracle #1** (tinted, highlight gaps) — verify the question list: no overlap, full coverage, no orphan entries.
+3. **Lens Mapping** — for each question, retrieve the matching lens via Lens Finder; invoke Optometrist if none fits.
+4. **Dynamic Prism Assembly** — compose the retrieved lenses into a prism specific to this problem.
+5. **Panoptic Application** (convex, reconverge) — view the problem through the assembled prism; answer emerges at the convergence.
+6. **Completeness Oracle #2** (tinted, verify puzzle integrity) — every question has an answer, no orphan answers, all answers mutually consistent, confidence tags attached.
+7. **Emission** — produce the answer; every claim traces back to a question/answer pair; tentative claims flagged.
+
+The tinted phase appears twice (phases 2 and 6) because filtering for gaps and overlaps is a distinct cognitive move that convex and concave phases alone cannot perform. Full workflow spec in `LENS-CATALOG.md` under "Puzzle Lens".
 
 ---
 
@@ -202,6 +251,18 @@ The pattern is overkill for a short conversation and essential for a long one �
 
 This pattern emerged from PHAIM development over a hundred-plus day collaboration, from the practical observation that any knowledge not redundantly encoded reliably vanished at the next context boundary. It is not theoretical.
 
+### Concrete example — the five slots at end of a consolidation session
+
+Near the end of a long consolidation session, state that the next session needs to pick up from is written to each of the five slots, each from a different angle:
+
+1. **Session-resume anchor file** (e.g. `HANDOFF.md`) — first-line description: "Last updated: YYYY-MM-DD — cycles X/Y/Z complete, N records drained, M anomalies." Follows with the next-action block: "Day N+1 first action: read the five valid scope options and ask Alex which." This file is loaded automatically at session start.
+2. **Persistent note in the memory system** — same state restated in compressed form, redundancy against the anchor file going missing or being stale. Tagged with `session-pointer` for rapid retrieval.
+3. **Reflective diary entry** — not instructions; voice. What surprised me today, what I got wrong, what felt right. A future reader uses this for *tone* continuity, not for state reconstruction.
+4. **Authoritative state document** (e.g. `CONSOLIDATION_STATE.md`) — project-specific truth table: which types are complete, which remain, which anomalies were found, what the cycle ledger shows. Detailed; the other four slots summarise or point at this one.
+5. **Commit message** — "consolidation cycle 1.10: PHASE 1 CATALOG DRAIN CLOSED (1392/1397 ~100%)" followed by a substantive body explaining the cycle, the anomalies, the lineages. Lives in git history, survives even if every `.md` file is deleted.
+
+Each slot has a different failure mode. The anchor file can go stale if not rewritten. The note can be missing if the memory system is down. The diary can drift into self-narrative and stop being useful. The state document can lag behind the ledger. The commit message is immutable but terse. Redundancy across failure modes is why all five exist together.
+
 ---
 
 ## Notes from convergent practice
@@ -219,10 +280,14 @@ This emergence-from-use pattern is itself evidence of the framework's groundedne
 
 ## Confirmation from cross-model interaction
 
-In cross-model conversation, Gemini engaged with lens vocabulary without prior teaching, mapped "lens" to Bohr's complementarity principle, produced sophisticated framings (Atomic vs Umbrella, Method vs Record) that extended the framework. This is evidence that:
+In cross-model conversation, Gemini engaged with lens vocabulary without prior teaching and mapped "lens" to Bohr's complementarity principle (quantum mechanics, 1927): the claim that some systems require multiple, mutually exclusive descriptions, each valid but none sufficient alone; observing one description precludes observing the other simultaneously. Gemini's mapping framed a cognitive lens as a complementary observation stance — one viewpoint admits a kind of content that another forbids; a prism then is the deliberate layering of complementary stances to reconstruct the whole.
+
+From this mapping Gemini extended the framework with two distinctions it did not receive in the prompt: **Atomic vs Umbrella** (is a given lens a single procedural primitive or a composite of smaller ones?) and **Method vs Record** (does a lens describe how to reason, or how to record the output of reasoning?). Both distinctions survived integration back into the framework and now help disambiguate catalogue entries that mix granularities.
+
+This is evidence that:
 
 - Lens vocabulary activates shared substrate concepts across models
-- Different models reach different but compatible terms for same underlying recognition
+- Different models reach different but compatible terms for same underlying recognition (Gemini's complementarity-frame and Claude's viewpoint-device-frame are not at odds; they are two physical analogues of the same abstract structure)
 - Framework is robust to model substitution
 
 ---
