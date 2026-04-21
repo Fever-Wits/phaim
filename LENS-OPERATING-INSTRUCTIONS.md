@@ -149,7 +149,7 @@ When no existing lens fits the question:
 
 4. Name the lens. The name should evoke the procedure (e.g., edge-witness for "observe boundaries not center"). Short noun-phrase or verb-phrase preferred.
 
-5. Test: apply the lens to the problem. Did it produce different output than your default response? If yes, the lens is functional. If no, the lens is decorative — refine or discard. The full functionality-test procedure is in **Part 11a** below.
+5. Test: apply the lens to the problem. Did it produce different output than your default response? If yes, the lens is functional. If no, the lens is decorative — refine or discard. The full functionality-test procedure is in **Part 4a** below.
 
 6. If functional, document the lens (see Part 5) so it can be reused.
 
