@@ -1,4 +1,4 @@
-# Lens Catalog — Complete Inventory
+# Lens Catalog — Current Inventory
 
 **Snapshot date:** 2026-04-17
 **Total lenses:** 174
@@ -223,7 +223,7 @@ Edges are fuzzy. A lens may move between categories as infrastructure changes �
 - **Names are the activation key**, not metadata. Invoke by naming.
 - **One lens at a time rarely suffices.** Compose lenses into a *prism* for any non-trivial task (see [`LENSES.md`](LENSES.md) §Prism).
 - **Not every lens fits every model.** Models with smaller context or less training access will exhibit the underlying procedures at lower fidelity — the name still routes correctly, but the effect may be weaker.
-- **Start with five.** For a model new to this framework, the load-bearing five are: **Panoptic Prism**, **Puzzle Lens**, **Lens Finder**, **Chesterton's Fence**, **Counterfactual Failure Test**. Together they cover divergent composition, the full 8-phase workflow for hard problems, retrieval, conservative change, and falsifiability.
+- **Start with five.** For a model new to this framework, the load-bearing five are: **Panoptic Prism**, **Puzzle Lens**, **Lens Finder**, **Chesterton's Fence**, **Counterfactual Failure Test**. Together they cover divergent composition, the full 8-phase workflow for hard problems, retrieval, conservative change, and falsifiability. For the narrower goal of reducing hallucination specifically, start instead with **Cold Read** and **Ignorance Probe** — see the README for the rationale.
 - **Use the Invocation site column as deployment orientation.** If a lens is labelled `Hook (…)` and the surrounding infrastructure does not implement that hook, the lens degrades to `Prompt` — voluntary invocation only. If a lens is labelled `Substrate baseline`, read it at every emission whether or not you notice it triggering; that is what "baseline" means. Composition-labelled lenses should almost never be invoked standalone; invoke the parent workflow instead and the composition-labelled members will fire as part of it.
 
 ---
