@@ -14,7 +14,7 @@ These are operating instructions for working with cognitive lenses. Read this do
 This file is the operational guide. It does not define the framework and it does not list the lenses. Two other files do:
 
 - **`LENSES.md`** — **framework specification**. Defines lens / meta-lens / prism / sub-prism / puzzle; explains the three-move optical taxonomy (convex / concave / tinted) and the four non-optical primitive kinds (enforcement gates, fidelity constraints, state signals, hook-backed interceptors); documents why the vocabulary was chosen and why it transfers across models. If a concept used below is not defined here, it is defined there.
-- **`LENS-CATALOG.md`** — **the inventory** of currently catalogued lenses (170 entries, alphabetical, each with a brief "what it does" + "when to apply"). The canonical list. If a named lens appears in these instructions without full procedure given inline, that procedure is in the catalog.
+- **`LENS-CATALOG.md`** — **the inventory** of currently catalogued lenses (alphabetical, each with a brief "what it does" + "when to apply" + "invocation site"). The canonical list. If a named lens appears in these instructions without full procedure given inline, that procedure is in the catalog.
 
 Suggested reading order: `LENSES.md` first (framework thesis), then this document (procedures), then the catalog (reference). Readers who arrive directly here — e.g. via a link to a specific Part — should at least skim `LENSES.md §How these documents relate` before applying anything operational from below.
 
@@ -207,7 +207,7 @@ Compatible: optometrist (when boundaries reveal disciplinary perspective)
 Incompatible: first-principles (which requires direct atomic observation)
 ```
 
-**Relationship to `LENS-CATALOG.md` row format.** The catalog uses a condensed three-column row per lens (`| Lens | What it does | When to apply |`) because 170 lenses at full seven-field detail would be unreadable as a flat table. The row is a *summary pointer* — enough to recognise the lens in a search, not enough to invoke it correctly on a novel case. The authoritative specification remains the seven-field form defined in this Part. When you add a lens to the catalog, populate the row as a distillation of fields *Trigger* and *Procedure*; keep the full seven-field definition in the source document where the lens was introduced (or in a lens registry if your system has one). Row and full definition must stay consistent; drift between them is a documentation bug.
+**Relationship to `LENS-CATALOG.md` row format.** The catalog uses a condensed row per lens (`| Lens | What it does | When to apply | Invocation site |`) because the full seven-field detail per lens would be unreadable as a flat table. The row is a *summary pointer* — enough to recognise the lens in a search, not enough to invoke it correctly on a novel case. The authoritative specification remains the seven-field form defined in this Part. When you add a lens to the catalog, populate the row as a distillation of fields *Trigger* and *Procedure*; keep the full seven-field definition in the source document where the lens was introduced (or in a lens registry if your system has one). Row and full definition must stay consistent; drift between them is a documentation bug.
 
 ---
 
