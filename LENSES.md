@@ -13,7 +13,7 @@ The framework is published across three files. Each has a different purpose, and
 
 - **`LENSES.md`** (this file) — **framework specification**. Defines what a lens is, what a prism is, what a puzzle is, why the vocabulary was chosen, and how the pieces fit. Thesis-level document; answers "what is this framework and why does it work."
 - **`LENS-OPERATING-INSTRUCTIONS.md`** — **step-by-step procedures** for applying the framework. Part-numbered operational guide; answers "how do I actually use this in a session."
-- **`LENS-CATALOG.md`** — **inventory of all currently catalogued lenses** (170 entries, alphabetical table with "what it does" + "when to apply" per lens). Reference document; answers "which lenses exist and when does each one apply."
+- **`LENS-CATALOG.md`** — **inventory of all currently catalogued lenses** (alphabetical table with "what it does" + "when to apply" + "invocation site" per lens). Reference document; answers "which lenses exist and when does each one apply."
 
 Suggested reading order depends on your goal:
 
