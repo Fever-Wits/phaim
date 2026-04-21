@@ -294,7 +294,7 @@ This is evidence that:
 
 ## Attribution
 
-Cognitive lens /(cognitive) meta-lens /(cognitive) prism /(cognitive) meta-prism /(cognitive) sub-prism /(cognitive) puzzle/(cognitive) meta-puzzle framework, in this specific operationalization, is the work of Aleksandаr Hristov (2026), developed through extended collaboration with Claude (Opus via Claude Code) and validated cross-model with Gemini, ChatGPT, Grok and local Qwen.
+Cognitive lens /(cognitive) meta-lens /(cognitive) prism /(cognitive) meta-prism /(cognitive) sub-prism /(cognitive) puzzle/(cognitive) meta-puzzle framework, in this specific operationalization, is the work of Aleksandar Hristov (2026), developed through extended collaboration with Claude (Opus via Claude Code) and validated cross-model with Gemini, ChatGPT, Grok and local Qwen.
 
 Underlying cognitive science traditions referenced or convergent with this framework: Cohen & Squire (procedural memory), Sumers et al. CoALA (cognitive architectures for language agents), de Bono (Six Thinking Hats), Munger (latticework of mental models), Klein (pre-mortem), Kross (self-distancing), Flavell (metacognition), Bohr (complementarity principle).
 
