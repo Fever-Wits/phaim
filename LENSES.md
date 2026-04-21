@@ -153,6 +153,32 @@ Puzzle Lens is the canonical name for the complete 8-phase reasoning workflow th
 
 The tinted phase appears twice (phases 2 and 6) because filtering for gaps and overlaps is a distinct cognitive move that convex and concave phases alone cannot perform. Full workflow spec in `LENS-CATALOG.md` under "Puzzle Lens".
 
+### Meta-prism
+
+A meta-prism is a composition of meta-lenses around a single selection or composition decision. Where a prism answers a problem with multiple simultaneous viewpoints, a meta-prism answers the prior question — *which lenses should I use, and how do they combine* — with multiple simultaneous meta-lenses.
+
+The canonical meta-prism is the one that appears at the start of any non-trivial task: **Lens-selector** (which lens addresses this?) + **Lens-composer** (can these operate together?) + **Lens-consequence-mapper** (what state will they produce?) held simultaneously, not sequentially. The output is not "the right lens" — it is a coherent lens assembly with its compatibility and consequences already understood.
+
+A meta-prism is useful precisely when the problem is complex enough that picking a single lens would under-serve it, but applying all possible lenses without selection would over-serve it. The meta-prism is the selection mechanism.
+
+### Meta-puzzle
+
+A meta-puzzle is the full set of meta-questions produced when the subject is not a specific problem but a class of problems, a methodology, or the framework's own operation on a domain.
+
+Where a puzzle dissolves a problem through question decomposition and lens application, a meta-puzzle dissolves a *method* — it answers questions like "what approach does this framework take to this class of situation", "which parts of the method are load-bearing versus incidental", "where does the method fail and why". The result is not a solution but a characterization of the approach itself.
+
+Meta-puzzles are rare in day-to-day use but become central during consolidation, publication, or when explaining the framework to another model or human. This document is itself the output of a meta-puzzle applied to the question "what *is* this framework."
+
+### Relationship to the base concepts
+
+The meta-level follows the same structure as the object-level, one step up:
+
+- **Lens** → acts on a problem. **Meta-lens** → acts on lenses.
+- **Prism** → composes lenses around one problem. **Meta-prism** → composes meta-lenses around one selection decision.
+- **Puzzle** → full question set for a problem. **Meta-puzzle** → full question set for a method or class.
+
+Further levels (meta-meta-lens, etc.) are theoretically possible but not used in practice. Three levels cover the material.
+
 ---
 
 ## Procedures (for models)
