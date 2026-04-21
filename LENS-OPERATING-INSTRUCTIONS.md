@@ -83,7 +83,7 @@ This is why some answers cannot be given as single statements. The problem requi
 
 ## Part 2: Examples of common lenses
 
-These are starter examples. Many more exist; you will discover or construct others as needed.
+These are starter examples drawn from the general reasoning vocabulary — the classical moves any sufficiently-trained model already knows (counterfactual, pre-mortem, steel-man, inversion, first-principles, edge-witness). They use canonical academic names rather than PHAIM-specific catalog names, which is why they do not appear as entries in `LENS-CATALOG.md`. For the curated, project-specific lenses see the catalog. Many more exist; you will discover or construct others as needed.
 
 **Counterfactual test**
 - Trigger: about to make a claim
@@ -329,6 +329,8 @@ Procedure:
 Polarizing Focus models a polarizing filter, not noise-cancelling headphones. It does not invert a measurable noise waveform (language-model substrates do not have that actuator). It is procedural re-anchoring — the lens forces the question "what am I searching for right now, suppress reasoning paths that do not touch it" at every emission boundary. Sustained use loses peripheral awareness; that is why releasing explicitly at the end is part of the procedure, not a nice-to-have.
 
 ### Composition for cross-session persistence (three-lens pattern)
+
+> **TODO (catalog drift):** *Unrecorded = Lost* is referenced as a named lens in step 3 below and also in `LENSES.md §Pattern: writing that survives context resets`, but does not appear as a canonical entry in `LENS-CATALOG.md`. See that file for the resolution options.
 
 Trigger: you are producing output that a future version of you (or another model) will need to read after the current context has been compacted, reset, or lost.
 
