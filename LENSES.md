@@ -235,6 +235,8 @@ A specific lens composition addresses a class of problem unique to long-running 
 
 Three lenses compose into a redundancy pattern:
 
+> **TODO (catalog drift):** *Unrecorded = lost* is referenced as a named lens here and in `LENS-OPERATING-INSTRUCTIONS.md` Part 10a, but does not appear as a canonical entry in `LENS-CATALOG.md`. This needs resolution via one of three paths: (a) add it as a new catalog entry following the Part 5 seven-field spec and Part 12 addition process; (b) rename the reference here to match an existing canonical name in the catalog (candidates: *Gap-to-Record*, *Update In Place*, *Knowledge Recognition*); (c) remove the named-lens framing if it is meant as a principle rather than a catalogued procedure. Until resolved, the reference is provisional.
+
 1. **Write documentation for a future reader** — assume the reader has zero session context and only verified facts.
 2. **Reference-document self-sufficiency check** — test whether the reader still needs to look elsewhere after reading.
 3. **Unrecorded = lost** — if something was learned, decided, or discussed but not recorded now, it will be gone after the next reset. Record first, not last.
