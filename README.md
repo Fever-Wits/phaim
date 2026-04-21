@@ -4,8 +4,8 @@
 
 PHAIM bridges the gap between human memory and AI context.
 It allows AI models — working alongside humans — to build, navigate
-and reason over a persistent knowledge graph of a working environment:
-projects, infrastructure, people and ways of working.
+and reason over a persistent knowledge graph that preserves decisions,
+their reasoning, and how they connect across sessions.
 
 ## What is PHAIM?
 
@@ -21,8 +21,8 @@ It solves three problems every long-running AI collaboration faces:
 
 ## Core concepts
 
-* Ideas, tasks, bugs, and decisions tracked as a **causal knowledge graph**
-* Lifecycle management: idea → task → implementation
+* Decisions, reasoning steps, and their outcomes stored as a **causal knowledge graph**
+* Reasoning lifecycle: question → exploration → decision → consequence → implementation
 * **Graph traversal** as primary navigation (keyword search for verification only)
 * Two knowledge types: **Project** (project-specific) and **Library** (AI-owned universal reasoning patterns)
 * Human and AI agents collaborate through structured workflows
