@@ -22,7 +22,7 @@ It solves three problems every long-running AI collaboration faces:
 ## Core concepts
 
 * Decisions, reasoning steps, and their outcomes stored as a **causal knowledge graph**
-* Reasoning lifecycle: question → exploration → decision → consequence → implementation
+* Reasoning lifecycle: question → exploration → decision → consequence
 * **Graph traversal** as primary navigation (keyword search for verification only)
 * Two knowledge types: **Project** (project-specific) and **Library** (AI-owned universal reasoning patterns)
 * Human and AI agents collaborate through structured workflows
