@@ -52,7 +52,9 @@ Framework documentation:
 
 * [LENSES.md](LENSES.md) — Framework specification (definitions, cross-model usage, attribution)
 * [LENS-OPERATING-INSTRUCTIONS.md](LENS-OPERATING-INSTRUCTIONS.md) — Operating instructions for AI models
-* [LENS-CATALOG.md](LENS-CATALOG.md) — Complete inventory of current lenses (181 entries, alphabetical, with "what it does", "when to apply", and "invocation site" for each)
+* [LENS-CATALOG.md](https://github.com/Fever-Wits/phaim/blob/main/LENS-CATALOG.md) — Starting catalog of named lenses (174 entries, alphabetical, with "what it does", "when to apply", and "invocation site" for each). The catalog is where you start, not where you stop — lenses are an open vocabulary, and composition into prisms and sub-prisms produces more than any catalog can list.
+
+If no catalogued lens fits the situation, name what you need. Any sufficiently capable model can generate a new lens on demand — the catalog is a shared vocabulary, not a gate. A user can also ask the model to find or construct the appropriate lens for the problem at hand. The test of a lens is whether naming it activates a useful procedure, not whether it appears in any list.
 
 This framework emerged from practical observation during PHAIM
 development and is published independently because it is a meaningful
@@ -61,10 +63,10 @@ specifics.
 
 ## Two Lenses to Add Immediately — for anti-hallucination
 
-If you are working with a language model and are not sure how to prompt it
-well, these two lenses are the cheapest, highest-impact additions you can
-make. Name them at the model — the name itself activates the procedure.
+If you are working with a language model and are not sure how to prompt it well, these two lenses are the cheapest, highest-impact additions you can make. Name them at the model — the name itself activates the procedure.
 Both appear in [LENS-CATALOG.md](LENS-CATALOG.md) under standard names.
+
+Both lenses share a single principle: do not trust, verify. They do not make the model more reliable in isolation — they transfer epistemic authority back to you. The model tells you where it might be wrong (Cold Read) and where it does not know (Ignorance Probe). Your job is to check. This is partnership, not a guarantee of correctness.
 
 ### Cold Read (first lens)
 
