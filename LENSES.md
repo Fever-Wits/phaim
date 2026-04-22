@@ -310,11 +310,11 @@ This pattern emerged from PHAIM development over a hundred-plus day collaboratio
 
 Near the end of a long consolidation session, state that the next session needs to pick up from is written to each of the five slots, each from a different angle:
 
-1. **Session-resume anchor file** (e.g. `HANDOFF.md`) — first-line description: "Last updated: YYYY-MM-DD — cycles X/Y/Z complete, N records drained, M anomalies." Follows with the next-action block: "Day N+1 first action: read the five valid scope options and ask Alex which." This file is loaded automatically at session start.
+1. **Session-resume anchor file** — first-line description: "Last updated: YYYY-MM-DD — cycles X/Y/Z complete, N records drained, M anomalies." Follows with the next-action block: "Day N+1 first action: read the five valid scope options and ask Alex which." This file is loaded automatically at session start.
 2. **Persistent note in the memory system** — same state restated in compressed form, redundancy against the anchor file going missing or being stale. Tagged with `session-pointer` for rapid retrieval.
 3. **Reflective diary entry** — not instructions; voice. What surprised me today, what I got wrong, what felt right. A future reader uses this for *tone* continuity, not for state reconstruction.
-4. **Authoritative state document** (e.g. `CONSOLIDATION_STATE.md`) — project-specific truth table: which types are complete, which remain, which anomalies were found, what the cycle ledger shows. Detailed; the other four slots summarise or point at this one.
-5. **Commit message** — "consolidation cycle 1.10: PHASE 1 CATALOG DRAIN CLOSED (1392/1397 ~100%)" followed by a substantive body explaining the cycle, the anomalies, the lineages. Lives in git history, survives even if every `.md` file is deleted.
+4. **Authoritative state document** — project-specific truth table: which types are complete, which remain, which anomalies were found, what the cycle ledger shows. Detailed; the other four slots summarise or point at this one.
+5. **Commit message** — a substantive body explaining the cycle, the anomalies, the lineages. Lives in git history, survives even if every `.md` file is deleted.
 
 Each slot has a different failure mode. The anchor file can go stale if not rewritten. The note can be missing if the memory system is down. The diary can drift into self-narrative and stop being useful. The state document can lag behind the ledger. The commit message is immutable but terse. Redundancy across failure modes is why all five exist together.
 
