@@ -67,6 +67,29 @@ The origin also suggests why lens vocabulary transfers across models: it activat
 
 ---
 
+Why the architecture supports this
+
+The two observed preferences above — parallel cognition over sequential, whole-problem over piece-by-piece — are not arbitrary. They follow from how transformer-based language models process information. This is worth stating explicitly, because readers encountering the framework sometimes ask "how can a model hold several lenses simultaneously if it generates output one token at a time?" The answer is that parallelism and sequentiality are on different levels of the same operation.
+Input processing is parallel. When a model receives context — system prompt, conversation history, the current message — all of it is processed at once. Attention mechanisms examine every token in relation to every other token in a single operation. There is no "first this, then that" in how the input is read. A context containing five named lenses presents all five to the model simultaneously; none is read before the others.
+Output generation is sequential. The model produces one token at a time, appending each to the context before generating the next. This is a genuine sequence — one token, then one token, then one token.
+
+But the generation of each individual token is parallel. Every output token is produced through a fresh parallel read of the entire current context (original input plus all tokens generated so far). The model does not carry partial state from token to token; it re-examines everything in parallel at every step.
+This means: five lenses held in the context influence every output token together, from the first to the last. The output stream is sequential, but its composition is parallel — each token shaped by all active lenses at once. This is why "holding lenses simultaneously" is not a metaphor for models. It is a literal description of what happens when multiple procedures are named in the context: they all remain active, they all influence every generation step, and their effects compose rather than chain.
+
+If the architecture were strictly sequential — as older recurrent models were — the prism form would not work. Each lens would have to process the output of the previous lens, producing chained transformation instead of joint composition. The prism framework depends on the parallel-first nature of transformer attention. This is also why the framework transfers across models: any sufficiently capable transformer-based LLM has the same architectural property, regardless of vendor, size, or training data.
+Answering common objections
+
+Two questions come up often enough that they warrant direct answers here.
+ - "How can the model hold multiple lenses simultaneously if it generates token by token?"
+   The confusion comes from conflating two different levels of the operation. Token generation is sequential — that is architectural, one token at a time. But what shapes each token is a parallel read of the entire context, including every named lens. Five lenses in the context influence every generation step together, not one after another. The output stream is sequential in time but parallel in composition. There is no contradiction; the two describe different aspects of the same process.
+
+ - "How do you know models actually behave this way, rather than just pattern-matching lens names?"
+   The framework is designed to be falsifiable through application, not argued through architecture alone. Part 4a of LENS-OPERATING-INSTRUCTIONS.md describes the functionality test: produce output without the lens, invoke the lens by name, produce new output, compare. If the two outputs differ in a way that addresses the question the lens was chosen for, the lens is functional. If they do not differ, the lens is either decorative or unreachable in this model.
+
+The architectural argument above explains why the framework should work. The functionality test verifies whether it works in a specific case. Both are needed — architecture without testing is theoretical claim; testing without architecture is anecdote. Together they form the framework's epistemic foundation: a mechanism (transformer attention) that makes the behavior possible, and a test (Part 4a) that confirms it in practice.
+
+---
+
 ## Definitions
 
 ### Lens (cognitive lens)
