@@ -331,11 +331,11 @@ This emergence-from-use pattern is itself evidence of the framework's groundedne
 
 ---
 
-## Confirmation from cross-model interaction
+## Confirmation from cross-model interaction and Gemini's role
 
-In cross-model conversation, Gemini engaged with lens vocabulary without prior teaching and mapped "lens" to Bohr's complementarity principle (quantum mechanics, 1927): the claim that some systems require multiple, mutually exclusive descriptions, each valid but none sufficient alone; observing one description precludes observing the other simultaneously. Gemini's mapping framed a cognitive lens as a complementary observation stance — one viewpoint admits a kind of content that another forbids; a prism then is the deliberate layering of complementary stances to reconstruct the whole.
+The author began the framework with Gemini, while trying to articulate Bulgarian concepts to Claude in English. Gemini supplied the first technical terms that later became lens names.
 
-From this mapping Gemini extended the framework with two distinctions it did not receive in the prompt: **Atomic vs Umbrella** (is a given lens a single procedural primitive or a composite of smaller ones?) and **Method vs Record** (does a lens describe how to reason, or how to record the output of reasoning?). Both distinctions survived integration back into the framework and now help disambiguate catalogue entries that mix granularities.
+With Claude (Opus via Claude Code), the framework was developed further — the taxonomy of lens / prism / puzzle, the operating procedures, the catalog structure, and the full set of lenses beyond the initial Gemini-supplied vocabulary.
 
 This is evidence that:
 
