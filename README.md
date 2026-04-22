@@ -70,8 +70,6 @@ Both lenses share a single principle: do not trust, verify. They do not make the
 
 Both lenses work at their strongest when wired into infrastructure (as pre-emit hooks that run before the model's output is committed), but both also work as voluntary invocations in plain prompt — infrastructure is an amplifier, not a requirement.
 
-Both lenses work at their strongest when wired into infrastructure (as pre-emit hooks that run before the model's output is committed), but both also work as voluntary invocations in plain prompt — infrastructure is an amplifier, not a requirement.
-
 ### Cold Read (first lens)
 
 Before the model commits to an answer, it reads its own draft as a stranger
