@@ -10,6 +10,10 @@
 
 A cognitive lens is a procedure — a specific cognitive operation the model already possesses by training. Invoking a lens means **naming it**: the name triggers retrieval of the procedure. Because human language encodes cognitive procedures as semantic content, any sufficiently capable language model can act on these lenses without special tooling, special schema, or special integration. The full framework rationale is in [`LENSES.md`](LENSES.md); the runtime calling conventions are in [`LENS-OPERATING-INSTRUCTIONS.md`](LENS-OPERATING-INSTRUCTIONS.md). This file is the inventory — what currently exists and how to reach for it.
 
+### A note on near-identical lens pairs
+
+Some lenses appear in the catalog as near-identical pairs (Error Handling / Error Recovery, Freshness Check / Freshness at Decision Points, MCP Restart Signal / MCP Server Restart Protocol, Bios Edit Gate / Bios Layer Principle, and similar). These are not duplicates and are retained intentionally as examples of the "neck/throat" pattern: different names for closely-related procedures, each activating a slightly different neighboring cluster in a model's learned distribution. A reader — or a model — may find that one name clicks where the other does not, depending on which surrounding concepts the model associates with each. This is a feature of how lens names interact with a model's substrate, not documentation drift. See `GLOSSARY.md` §Activation for the underlying mechanic.
+
 ## The meta-primitive: how to find a lens when you don't know which applies
 
 **Lens Finder** is the reverse-lookup primitive. Given a natural-language description of the situation or the cognitive move needed, Lens Finder returns the canonical lens name. 
