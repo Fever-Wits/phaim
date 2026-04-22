@@ -22,7 +22,7 @@ Suggested reading order depends on your goal:
 3. **Looking up a specific lens by concept** → `LENS-CATALOG.md` (alphabetical table + Lens Finder meta-primitive).
 4. **Extending the framework** → `LENS-OPERATING-INSTRUCTIONS.md` Part 4 (construction) + Part 5 (documentation) + Part 12 (extension).
 
-Each document cross-links to the others at relevant points. If something in this file references a procedure, the procedure is in `LENS-OPERATING-INSTRUCTIONS.md`. If this file mentions a named lens without defining it, the definition is in `LENS-CATALOG.md`.
+Each document cross-links to the others at relevant points. If something in this file references a procedure, the procedure is in `LENS-OPERATING-INSTRUCTIONS.md`. If this file mentions a named lens without defining it, the definition is in `LENS-CATALOG.md`. If a technical term (substrate, drift, valence, hedge density, and similar) is used without definition, it is defined in `GLOSSARY.md`.
 
 ---
 
