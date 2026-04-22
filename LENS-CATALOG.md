@@ -1,6 +1,6 @@
 # Lens Catalog — Current Inventory
 
-**Snapshot date:** 2026-04-17
+**Snapshot date:** 2026-04-22
 **A starting catalog of named lenses — base examples, not an exhaustive list. The catalog grows with use; memorising every entry is not realistic, and unnecessary — knowing the finder is sufficient.**
 **Companion docs:** [`LENSES.md`](LENSES.md) (framework thesis) · [`LENS-OPERATING-INSTRUCTIONS.md`](LENS-OPERATING-INSTRUCTIONS.md) (runtime)
 
