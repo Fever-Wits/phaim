@@ -52,7 +52,7 @@ Framework documentation:
 
 * [LENSES.md](LENSES.md) — Framework specification (definitions, cross-model usage, attribution)
 * [LENS-OPERATING-INSTRUCTIONS.md](LENS-OPERATING-INSTRUCTIONS.md) — Operating instructions for AI models
-* [LENS-CATALOG.md](LENS-CATALOG.md) — Starting catalog of named lenses (alphabetical, with "what it does", "when to apply", and "invocation site" for each). Base examples, not an exhaustive list — the catalog grows with use. Lenses are an open vocabulary, and composition into prisms and sub-prisms produces more than any catalog can list.
+* [LENS-CATALOG.md](LENS-CATALOG.md) — Starting catalog of named lenses (alphabetical, with "lens name", "what it does", "when to apply", and "invocation site" columns). The names are the activation keys — invoking a lens by its exact name is how the underlying procedure is retrieved, so the name column is load-bearing, not decorative. Base examples, not an exhaustive list — the catalog grows with use. Lenses are an open vocabulary, and composition into prisms and sub-prisms produces more than any catalog can list.
 
 If no catalogued lens fits the situation, name what you need. Any sufficiently capable model can generate a new lens on demand — the catalog is a shared vocabulary, not a gate. A user can also ask the model to find or construct the appropriate lens for the problem at hand. The test of a lens is whether naming it activates a useful procedure, not whether it appears in any list.
 
