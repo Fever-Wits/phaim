@@ -37,9 +37,9 @@ forms a **puzzle**, and solving the puzzle lets the central answer
 emerge as the shape of the assembled structure.
 
 The framework is not PHAIM-specific or Claude-specific. It works
-cross-model (Claude, Gemini, ChatGPT, Qwen) because human language
-encodes cognitive procedures as semantic content, and naming a
-procedure activates it across any model with access to that shared
+cross-model (Claude, Gemini, ChatGPT, Grok, local Qwen) because human
+language encodes cognitive procedures as semantic content, and naming
+a procedure activates it across any model with access to that shared
 training distribution.
 
 Each lens is a named activation handle for a reasoning skill the model
