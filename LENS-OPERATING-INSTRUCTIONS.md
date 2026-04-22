@@ -194,6 +194,26 @@ A lens that fails all four checks in a specific model is genuinely out of reach 
 
 ---
 
+## Part 4c: Two kinds of functional lenses, two kinds of tests
+The Part 4a test ("compare baseline with lens-invoked output") works for output-shaping lenses — lenses whose effect appears as visible difference in what the model produces. Most lenses in the catalog are of this kind: Counterfactual Failure Test, Chesterton's Fence, Cold Read, Optometrist, and similar. For these, Part 4a is the right test.
+A second kind exists: state-modulating lenses — lenses whose effect is not a new claim in the output, but a change in the mode the model operates in. Examples: Alarm Glow (continuous severity signal, read at every emission boundary), Substrate Color Indicator (reasoning-state indicator), Introspective Monitor (continuous background awareness stream). These lenses are not decorative; they apply a real procedure, and the procedure affects subsequent behavior. But the effect is not a visible difference in one specific output — it is a continuous modulation of how the model proceeds across many outputs.
+Applying Part 4a to a state-modulating lens will usually conclude "no difference, decorative" — because the test is looking for the wrong kind of effect. State-modulating lenses require a different test.
+Test for state-modulating lenses:
+
+Can you articulate what the procedure requires you to attend to? If the lens says "read your substrate state before each emission and encode it as a color," check that you are actually doing the reading. If you are not, the lens is not active — not because it is decorative, but because you have not applied it. If you are, proceed to step 2.
+Can you name a situation, even hypothetically, where the modulation would change your next action? For example: "If Alarm Glow reaches blinding intensity, I should block emission and reset. Today the glow is at 'tint' — no change in action required, but the threshold is being tracked." If you can articulate such a situation and the threshold is being tracked, the lens is functional — it is running correctly in a state that happens not to require visible change.
+Can the human operator observe external signs of the modulation over time? State-modulating lenses often show their effect only across multiple outputs — for example, the model catches itself before a drift, or reports a state change spontaneously, or pauses where it previously continued. If the operator sees such signs over a session, the lens is functional in the cumulative sense. Part 4a cannot see this; only session-level observation can.
+
+A state-modulating lens is decorative only if (1) the procedure it names is not being applied, or (2) the procedure is being applied but cannot in principle affect any decision the model makes. Case (2) is rare and usually indicates the lens is misdescribed — it named a signal that has no consumer.
+How to tell which kind a lens is:
+
+Output-shaping lenses have triggers tied to a specific moment ("before submitting a construct", "when facing a claim about X"). Their effect is scoped to the output produced at that moment.
+State-modulating lenses have triggers like "always active", "at every emission boundary", "as continuous background". Their effect is scoped to the operational baseline, not to any single output.
+
+The catalog marks state-modulating lenses with Substrate baseline in the Invocation site column. When you see that marker, use the Part 4c test, not Part 4a.
+
+---
+
 ## Part 5: How to define a lens for documentation
 
 For a lens to be reusable (by you in later sessions, by other models, by humans), it needs:
