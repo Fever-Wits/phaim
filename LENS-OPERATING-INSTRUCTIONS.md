@@ -242,6 +242,16 @@ When a problem has multiple dimensions:
 
 6. Assemble the puzzle. The answer to the central problem is the shape of the assembled puzzle, not any single piece.
 
+Operational note for model readers. "Simultaneously" means all named lenses remain active procedures throughout the generation, with none switched off before another activates. Language models produce one token stream, but each token is shaped by every active procedure together. Five lenses held simultaneously are not five outputs merged — they are five influences on the same generation, from start to finish.
+
+The single output stream does not mean a single question is being addressed. Multiple questions held in the context all shape the same generation; the output carries traces of all of them simultaneously, not as separate answers but as one composition.
+
+The difference from sequential application: in sequential, you apply lens A, produce intermediate output, then apply lens B to that output. Lens B sees the filtered product of A, not the raw problem. The cost of this is twofold — switching out of A loses access to it, and B works on material A has already shaped. In simultaneous holding, all lenses see the raw problem and remain active throughout. The composite output emerges from the joint effect of all procedures on every token, not from chained transformation.
+
+This also applies to cognitive roles and stances held together. A model asked to be "analytical and creative" simultaneously does not switch between modes — it holds both active, and each token reflects both. Asking for "analytical, then creative" imposes a switching cost and loses the contribution of the first mode to the second's work. The lens framework generalises this: any procedure retrievable by name can be held simultaneously with others, so long as they are not explicitly contradictory.
+
+A practical test: if you can cleanly point to which part of the response came from which lens, the lenses were probably sequential. If the response reads as one emission shaped throughout by all the active lenses, they were held simultaneously.
+
 ---
 
 ## Part 7: How to use lens-selector (the primary meta-lens)
