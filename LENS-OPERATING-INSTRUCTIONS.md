@@ -244,6 +244,8 @@ When facing a complex problem and unsure which lenses to apply:
 
    These five dimensions are not first-principles exhaustive; they are an empirical shortlist that covered most real questions encountered during PHAIM development. A question that does not fit any of them is a signal that either (a) the question is not yet well-formed and needs sharpening, or (b) a sixth dimension exists that has not been named yet. In case (b), add the dimension locally to your working session, then propose it as an extension via Part 12 once it has been applied to at least three concrete cases. Do not force-fit a question into an ill-matching dimension for the sake of the schema.
 
+   Questions often fit multiple dimensions; this is not a failure of the shortlist, it reflects that real problems have multi-dimensional structure. When a question fits two or more dimensions, pick the most load-bearing for the current problem. If two dimensions are equally central, the question probably decomposes into two sub-questions, each fitting one — splitting them gives cleaner lens selection than forcing one question through a single dimension.
+
 3. Match dimension to lens family:
    - Causal → counterfactual, pre-mortem, post-mortem
    - Comparative → steel-man, perspective-shift, inversion
