@@ -274,7 +274,7 @@ Color alone can be treated as an ambient ticker and drifted past; **glow prevent
 
 Lenses accumulated through 100+ days of collaborative practice between a single human and frontier language models (primarily Claude Opus) during the development of a persistent memory system. The catalog is published as a snapshot; a new snapshot is cut when the inventory changes materially.
 
-The canonical authored source lives in a separate private repository; this catalog is the universal, model-agnostic subset suitable for any LLM substrate to read and use.
+The canonical authored source lives in a separate private repository. This catalog contains two kinds of lenses: lenses that work with any sufficiently capable LLM regardless of surrounding infrastructure, and lenses that require a specific architectural context (knowledge store, session lifecycle hooks, structured records, routing layer, or similar). The second kind is applicable in any system that has an architecture of that class, not only in PHAIM — but they are not usable in a bare LLM with no surrounding infrastructure. A later revision of the catalog will mark which entries belong to which kind.
 
 ### Lenses contributed from external sources
 
