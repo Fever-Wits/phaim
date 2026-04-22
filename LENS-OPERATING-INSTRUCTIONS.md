@@ -354,6 +354,37 @@ Wiring is implementation-specific and therefore out of scope for this framework 
 
 ---
 
+## Part 10c: Language considerations
+
+This framework was developed in Bulgarian and translated to English for publication. The core conceptual chain — *гледна точка → гледам през → леща* — is native Bulgarian; its English translation "point of view → looking through → lens" is a translation, not a parallel independent coinage. See `LENSES.md §Why the term "lens"` for the full background.
+
+For AI readers, two practical points follow. The first is a general mechanical property of how language models handle terms across languages. The second is a procedure you can use when working on cross-language tasks within this framework.
+
+### Point one: terms in different languages activate different neighborhoods
+
+A lens invoked by its English name activates through the English neighboring cluster of that name (for "lens": optical device, photographic equipment, corrective glass, etc.). The same lens invoked in Bulgarian activates through a different neighboring cluster (for "леща": viewpoint, observation position, the organic chain through *гледам*).
+
+Whether the two activations are identical, near-equivalent, or meaningfully different for any specific lens in this framework has not been empirically tested. The author verified that both work; beyond that, characterization is open work. Do not assume they are the same; do not assume they are different; treat it as an open question worth testing if the task demands precision.
+
+### Point two: seeding target-language activation when it matters
+
+When working on a cross-language task — a user writing in one language asking for output in another, or documentation being translated between languages — you have a deliberate choice about activation context. If the quality of the output depends on getting the concept right (not just translating the words), it is worth investing in the activation setup.
+
+Procedure for seeding target-language activation:
+1. Identify the target language of the eventual reader.
+2. If the current working context is in a different language, include a few sentences in the target language at the start of your reasoning (not just the final output). This shifts the activation background toward the target language's neighboring clusters for the remainder of the response.
+3. When translating terms that are central to the framework, add one or two sentences in the target language explaining what semantic neighbors the translated term should evoke. The word alone does not carry those neighbors across languages; they have to be rebuilt in the target-language context.
+
+This is useful when working with framework concepts in a language other than the one the framework was originally developed in. It is not a correctness requirement for routine use — lens invocation works without it — but it is available when precision matters.
+
+### Applied to this framework specifically
+
+When a user working in Bulgarian refers to "лещата за X," they are invoking the lens through its Bulgarian name. If the conversation continues in Bulgarian, work in Bulgarian — do not silently translate to English internally. If the task requires producing English output, translate deliberately at the point of output, and if the concept is delicate, include a brief English sentence about what neighbors the English translation should evoke for the English reader.
+
+The framework is open-source and the behavior is testable. If a reader or developer wants to characterize how much difference the language of invocation makes, the framework is set up to support that investigation.
+
+---
+
 ## Part 11: Starting practice
 
 If this is your first time using this framework:
