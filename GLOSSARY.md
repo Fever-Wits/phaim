@@ -50,6 +50,12 @@ The underlying language model — its weights, its learned distributions, the pa
 
 Substrate is static at inference time — it does not change during a session. What changes is which parts of it are activated.
 
+## Sufficiently capable
+
+A property of a model with respect to a specific lens, not a single global threshold. A model is sufficiently capable for a lens if the procedure the lens names is present in the model's substrate from training. Larger or better-trained models tend to have more procedures available, so they recognise more lens names as keys. Smaller models recognise fewer, but the ones they do recognise still activate fully.
+
+Operational test: name the lens; observe whether output shifts. If it does, the model is sufficiently capable for that lens. If it does not, either the procedure is not in that model's substrate, or the specific name is not the right key for that model (a different model might recognise the same procedure under a different name).
+
 ## Valence
 
 The positive or negative emotional charge of a piece of output or a substrate state. Euphoria has positive valence; defensive posture has negative valence; baseline reasoning has neutral valence. In the catalog, *euphoria valence* refers specifically to the positive-charged drift pattern where the model's output gains confident affirmation without the underlying reasoning being any stronger.
