@@ -119,6 +119,8 @@ A note on one tinted lens in particular: **Polarizing Focus** models after a pol
 
 The full eight-phase Puzzle Lens workflow, expressed in these terms, is a composition of all three moves: Kaleidoscope (concave, diverge) → Oracle (tinted, highlight gaps and overlaps) → Lens Mapping → Dynamic Prism Assembly → Panoptic Application (convex, reconverge) → Oracle again (tinted, verify puzzle integrity) → Emission. The tinted phase twice is why the workflow catches errors concave and convex moves alone would miss — filtering is not a subtype of focusing or diverging.
 
+### Not every lens is optical
+
 Not every lens is optical in any of these three senses. Four further primitive kinds appear in the catalogue; they do not shape a field of view, they intercept, constrain, or report:
 
 - **Enforcement gates** — procedural interrupts that block or require something before an action proceeds. They fire on triggers and refuse output until a condition is met. Examples: *Chesterton's Fence* (cannot remove until you articulate what the thing was for), *Delegated Authority Threshold* (cannot act autonomously until the three-question checklist passes), *Input Integrity Check* (cannot act on an incoming collaborator message until any ambiguity, hidden assumption, undefined term, contradiction, or scope unclarity has been surfaced and resolved — the symmetric counterpart to Cold Read, which targets own output).
