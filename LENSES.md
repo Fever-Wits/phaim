@@ -26,6 +26,18 @@ Each document cross-links to the others at relevant points. If something in this
 
 ---
 
+## Audience: both AI and human readers, simultaneously
+
+These documents are not written for a single reader type with a translation layer added afterward. They are designed so that the same records activate useful behaviour in both channels — an AI model reading them retrieves procedures via name-matching and semantic similarity; a human reading them retrieves the same procedures via memory anchors, mnemonic framing, and motivational weight.
+
+The two channels have different strengths. AI is more reliably activated by procedural formulations with concrete triggers and typed fields. Humans are more reliably activated by mnemonic names, motivational framing, and metaphor. Well-designed records carry both — the procedural spine for the AI channel, the mnemonic skin for the human channel. When a lens has both a procedural name (e.g., *Knowledge Recognition*) and a motivational name (*Unrecorded = Lost*) pointing at the same underlying discipline, they are not duplicates; they are the two channels of the same lens.
+
+This is the structural meaning of PHAIM's full name: **Platform for Human-AI Integrated Memory**. Not a platform for human memory with AI added, not a platform for AI memory with human oversight, but integrated — the same records, read by both, activating in both.
+
+Consequence for writing records: every new lens, every new type of record, every schema decision should pass the bilingual test — does this activate usefully in the AI channel? In the human channel? If it works in only one, it is a half-record. Make it work in both, or mark it explicitly as single-channel with a reason.
+
+---
+
 ## Status of this document
 
 This document defines a framework for cognitive operation that emerged through extended practice with multiple frontier LLMs (Claude Opus, Claude Sonnet, Gemini, local Qwen) during PHAIM development. It is written in English, addressed to AI models and to humans who want to understand how models can use it.
