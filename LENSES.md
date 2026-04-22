@@ -1,7 +1,7 @@
 # Cognitive Lens Framework: Specification and Usage
 
 **Status:** Published at https://github.com/Fever-Wits/phaim
-**Version:** 2026-04-18
+**Version:** 2026-04-22
 **License:** MIT
 **Contact:** alex@hgs.name, a.hristow@gmail.com
 
@@ -150,6 +150,8 @@ A prism is a composition of lenses around a single problem. Multiple lenses, eac
 A prism produces composite understanding that no single lens can reach, analogous to how a physical prism splits light into spectrum — the spectrum reveals structure invisible in undifferentiated light.
 
 A prism requires at least two lenses by definition; a single-lens invocation is not a prism, it is a lens application. The threshold is load-bearing: the entire point of prism framing is simultaneous multi-perspective convergence, which requires multiplicity.
+
+In practice, single-lens invocation is the most common case — most problems are well-served by one well-chosen lens. A prism becomes necessary when a problem has multiple dimensions that no single lens can address simultaneously. This is why the framework puts lens (not prism) at the centre of most starter examples: the lens is the atomic working unit; the prism is the composite form that appears when the work calls for it.
 
 ### Panoptic Prism (distinct from generic prism)
 
