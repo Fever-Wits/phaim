@@ -44,7 +44,8 @@ This document defines a framework for cognitive operation that emerged through e
 
 The framework is not Anthropic-specific, not Claude-specific, not PHAIM-specific. It works because all sufficiently capable LLMs share overlapping training distributions from human language, and human language encodes cognitive procedures as semantic content. Naming a procedure activates retrieval of that procedure across any model that has access to it.
 
-This is the central thesis: **cognitive lenses are a universal substrate language between models, mediated by human language as shared protocol.**
+This is the central thesis: **cognitive lenses are a universal substrate language between models, mediated by human language as shared protocol.** 
+Readers who want to verify this are invited to test.
 
 ---
 
