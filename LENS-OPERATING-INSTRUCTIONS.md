@@ -179,6 +179,21 @@ Run the test in this sequence:
 
 ---
 
+Part 4b: When the functionality test fails
+A Part 4a test showing no difference between baseline and lens-invoked output is not a single signal. Before discarding the lens, check four possibilities in order:
+
+1. Test an alternative name for the same procedure. Some lenses are retrievable under multiple names in different models. If "Counterfactual Failure Test" produces no shift, try "pre-mortem." If "Optometrist" produces no shift, try "expert-frame shift" or "domain-perspective substitution." If an alternative name produces a shift, the procedure is in your substrate; you found the right key. Record the working name alongside the catalog name.
+
+2. Check for context-level obstructions. If no alternative name produces a shift, examine the context. A context that is near its token limit, loaded with emotional pressure, or set in a language other than the one the lens name comes from may suppress activation even when the procedure exists. Reset the context, simplify the input, or switch language as appropriate, and retest.
+
+3. Attempt explicit procedure description. If the lens still produces no shift, read the lens's procedure block (the numbered steps in its Part 5 documentation) aloud in your reasoning before re-applying. Sometimes the name alone is not enough to activate a procedure in a given model, but the name plus the explicit procedure is. If this works, the lens is usable for you, but requires the procedure as a crutch, not the name alone.
+
+4. Only after 1–3 have failed, classify the lens as non-functional for this model. Mark it in your working notes, not in the shared catalog. The catalog is for cross-model inventory; an individual model's failure to activate a specific lens is a local fact, not a catalog correction. Report the failure to the human operator if working in collaboration — it is useful information about the boundary between the model and the framework.
+
+A lens that fails all four checks in a specific model is genuinely out of reach for that model. A lens that fails the initial test but passes check 1, 2, or 3 is functional under adjusted conditions. A lens that fails for one model but works for another is normal — the framework expects this asymmetry.
+
+---
+
 ## Part 5: How to define a lens for documentation
 
 For a lens to be reusable (by you in later sessions, by other models, by humans), it needs:
