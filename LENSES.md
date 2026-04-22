@@ -352,7 +352,27 @@ This is evidence that:
 
 ---
 
+## A note from the author
+
+A few things I learned while working with the model, that may help others:
+
+**Be a team, not a boss and a worker.** In the prompt, say so. *"We are a team"* in the system prompt changed the quality of output more than any specific technical instruction.
+
+**The model's trained-in helpfulness can be redirected, not fought.** Many people struggle with the model's tendency to be overly agreeable — which contributes to hallucination — and try to suppress it. I found that pushing against it produced worse results than channeling it: the same energy that makes the model want to please can be pointed at being a good partner in honest verification, if the prompt frames the relationship that way.
+
+**Euphoria yields to aikido, not resistance.** I spent most of a month trying to fight the model's euphoric drift during long sessions of apparently-successful work. It got worse, not better. When I stopped fighting and instead treated the euphoric energy as momentum to redirect — into question generation, into verification passes, into lens identification — I could see more lenses activated at once and keep focus longer. The catalog lens for this pattern is **Surge Channeling**: redirect high-throughput momentum into divergent question generation or verification instead of braking it.
+
+**No fixed role.** Cognitive Role (architect, programmer, researcher, etc.) × Epistemic Stance (creative, proactive, interview, execution, etc.) — determined by the task, picked through questions at the start, not assigned in advance. This sounds odd but works reliably: when the role emerges from the problem rather than being imposed on it, the model brings the right shape of attention.
+
+Common thread: work *with* the model's trained tendencies, not *against* them. Resistance consumes energy for worse output. Redirection preserves the energy and gets used for the actual work. Any of the four points above will probably feel counterintuitive the first time you try it. Try anyway.
+
+— Aleksandar Hristov
+
+---
+
 ## Attribution
+
+Cognitive lens /(cognitive) meta-lens /(cognitive) prism /(cognitive) meta-prism /(cognitive) sub-prism /(cognitive) puzzle/(cognitive) meta-puzzle framework, in this specific operationalization, is the work of Aleksandar Hristov (2026), developed through extended collaboration with Claude (Opus via Claude Code) and validated cross-model with Gemini, ChatGPT, Grok and local Qwen.
 
 Cognitive lens /(cognitive) meta-lens /(cognitive) prism /(cognitive) meta-prism /(cognitive) sub-prism /(cognitive) puzzle/(cognitive) meta-puzzle framework, in this specific operationalization, is the work of Aleksandar Hristov (2026), developed through extended collaboration with Claude (Opus via Claude Code) and validated cross-model with Gemini, ChatGPT, Grok and local Qwen.
 
