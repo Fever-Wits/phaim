@@ -264,7 +264,7 @@ When facing a complex problem and unsure which lenses to apply:
 
 ## Cross-model usage
 
-This framework is not Claude-specific. It works in Gemini, GPT, Qwen, Llama, and any sufficiently capable LLM, because:
+This framework is not Claude-specific. It works in Gemini, ChatGPT, Grok, local Qwen, and any sufficiently capable LLM, because:
 
 1. The cognitive procedures named by lenses exist in any model trained on substantial human text
 2. Human language is the shared protocol — models converge on similar conceptual clusters when given lens vocabulary
