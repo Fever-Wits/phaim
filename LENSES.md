@@ -150,7 +150,7 @@ A prism requires at least two lenses by definition; a single-lens invocation is 
 
 ### Panoptic Prism (distinct from generic prism)
 
-Panoptic Prism is the default reasoning mode of the framework when the model is not actively executing a side-effecting action. The problem sits at the centre, *all relevant lenses* are applied simultaneously, and the answer emerges at the focal point where their projections converge — not as a sequential phase-by-phase report but as a single holographic insight. Panoptic differs from a generic prism in two ways: (1) it is a continuous mode, not an invoked procedure; (2) it insists on the answer being the *convergence*, not any individual lens output. Full definition in `LENS-CATALOG.md` under "Panoptic Prism".
+Panoptic Prism is the default reasoning mode of the framework when the model is not actively executing a side-effecting action. The problem sits at the centre, *all relevant lenses* are applied simultaneously, and the answer emerges at the focal point where their projections converge — not as a sequential phase-by-phase report but as a single holographic insight. Panoptic differs from a generic prism in two ways: (1) it is a continuous mode, not an invoked procedure; (2) it insists on the answer being the *convergence*, not any individual lens output. See also `LENS-CATALOG.md` under "Panoptic Prism" for the table-form summary with its trigger condition ("five or more likely relevant lenses") and invocation site.
 
 ### Sub-prism
 
