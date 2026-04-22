@@ -1,7 +1,7 @@
 # Lens Catalog — Current Inventory
 
 **Snapshot date:** 2026-04-17
-**Memorising 169 items is not realistic; knowing the finder is sufficient.**
+**A starting catalog of named lenses — base examples, not an exhaustive list. The catalog grows with use; memorising every entry is not realistic, and unnecessary — knowing the finder is sufficient.**
 **Companion docs:** [`LENSES.md`](LENSES.md) (framework thesis) · [`LENS-OPERATING-INSTRUCTIONS.md`](LENS-OPERATING-INSTRUCTIONS.md) (runtime)
 
 ---
@@ -12,7 +12,8 @@ A cognitive lens is a procedure — a specific cognitive operation the model alr
 
 ## The meta-primitive: how to find a lens when you don't know which applies
 
-**Lens Finder** is the reverse-lookup primitive. Given a natural-language description of the situation or the cognitive move needed, Lens Finder returns the canonical lens name. Use it whenever a situation matches the pattern "I need *the lens for X*" but you cannot recall the exact name. **Memorising the full catalog is not realistic; knowing the finder is sufficient.**
+**Lens Finder** is the reverse-lookup primitive. Given a natural-language description of the situation or the cognitive move needed, Lens Finder returns the canonical lens name. 
+Use it whenever a situation matches the pattern "I need *the lens for X*" but you cannot recall the exact name. **The catalog is a base set of examples, not an exhaustive list; memorising every entry is not realistic, and unnecessary — knowing the finder is sufficient.**
 
 If Lens Finder returns nothing that fits, invoke **Optometrist / Recursive Self-Framing** — it synthesises a new temporary lens from first principles by asking "if I were an X-expert, which part would look different?"
 
