@@ -330,8 +330,6 @@ Polarizing Focus models a polarizing filter, not noise-cancelling headphones. It
 
 ### Composition for cross-session persistence (three-lens pattern)
 
-> **TODO (catalog drift):** *Unrecorded = Lost* is referenced as a named lens in step 3 below and also in `LENSES.md §Pattern: writing that survives context resets`, but does not appear as a canonical entry in `LENS-CATALOG.md`. See that file for the resolution options.
-
 Trigger: you are producing output that a future version of you (or another model) will need to read after the current context has been compacted, reset, or lost.
 
 Procedure:
