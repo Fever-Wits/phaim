@@ -1,7 +1,7 @@
 # Cognitive Lens Framework — Operating Instructions
 
 **Status:** Published at https://github.com/Fever-Wits/phaim
-**Version:** 2026-04-18
+**Version:** 2026-04-22
 **License:** MIT
 **Contact:** alex@hgs.name, a.hristow@gmail.com
 
