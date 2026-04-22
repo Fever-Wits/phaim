@@ -51,7 +51,9 @@ Readers who want to verify this are invited to test.
 
 ## Origin
 
-This framework emerged from practical observation, not theoretical design. While working with Claude Opus over extended sessions during PHAIM development, two patterns became visible:
+This framework is not Claude-specific. It works in Gemini, ChatGPT, Grok, local Qwen, and any sufficiently capable LLM, because:
+
+A note on "sufficiently capable" — this is not a single threshold based on model size or training scale. A model is sufficiently capable for a specific lens if the procedure the lens names is present in the model's substrate from training. Larger or better-trained models have more procedures available, so they recognise more lens names; smaller models have narrower but equally-real coverage. A procedure may also be retrievable under different names in different models — one model activates on "counterfactual", another might need "pre-mortem" to reach the same underlying move. This is why the lens is the procedure, not the word: the same procedure can have multiple valid keys across models. The practical test is always to name the lens and observe whether output shifts; if it does, the model is sufficiently capable for that lens. See `GLOSSARY.md` for the concise definition.
 
 1. **Parallel cognition is more stable than sequential.** The model handles multiple cognitive modes held simultaneously (reactive + creative, analytical + generative) more smoothly than switching between them sequentially. Mode-switching has cost; mode-holding does not.
 
