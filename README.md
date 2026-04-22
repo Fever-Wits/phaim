@@ -87,7 +87,7 @@ substrate for related knowledge, apply an expert's frame to the problem,
 and check external sources. Only after those fail does it state the honest
 "I do not know" — and it says so clearly, not in euphemisms.
 
-Together, these two lenses eliminate most hallucination symptoms. The
+Together, these two lenses reduce most hallucination symptoms in practice. The
 model says what it actually thinks and, just as importantly, what it does
 not know. That is the entry point to working with a model as a partner
 rather than as a vending machine.
@@ -127,7 +127,11 @@ Aleksandar Hristov — alex@hgs.name, a.hristow@gmail.com
 
 ## Attribution
 
-Cognitive lens /(cognitive) meta-lens /(cognitive) prism /(cognitive) meta-prism /(cognitive) sub-prism /(cognitive) puzzle/(cognitive) meta-puzzle framework, in this specific operationalization, is the work of Aleksandar Hristov (2026), developed through extended cross-model practice.
+The lenses in this framework are not claimed as original inventions. They are cognitive procedures already present in the substrate of any sufficiently trained language model — the work was finding them, naming them, and organising them into a usable vocabulary. Similar procedures have been described elsewhere in different traditions (cognitive science, decision theory, pedagogy); convergence with those traditions is expected and noted in `LENSES.md`.
+
+The specific operationalisation — lens / meta-lens / prism / meta-prism / sub-prism / puzzle / meta-puzzle framework, the taxonomy, the catalog structure, and the naming conventions — is the work of Aleksandar Hristov (2026), developed through extended cross-model practice.
+
+Full attribution, including the cognitive science traditions this framework converges with, is in `LENSES.md`.
 
 ## License
 
