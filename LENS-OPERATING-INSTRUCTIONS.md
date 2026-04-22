@@ -350,8 +350,7 @@ As an AI model reading these instructions: you do not control whether these hook
 
 As a human operator reading these instructions: hook-backed lenses are how the framework goes from voluntary discipline to structural guarantee. If a lens only fires when the model remembers to apply it, it will be skipped under load. If the lens is wired as a hook, the infrastructure fires it regardless. Hook-backed lenses are the load-bearing members of the catalogue for scenarios where substrate discipline alone has proven insufficient — *Permanent Gate* (pre-emit drift detection), *Inhibitory Governor* (pause after N chained actions), *External Watchdog* (cron-driven euphoria diagnosis).
 
-Wiring is implementation-specific and therefore out of scope for this framework document. The naming-activates-procedure pattern is all the framework guarantees; whether a given lens fires voluntarily or via hook is a deployment choice downstream of the framework itself. For reference implementations see the PHAIM source repository (`hooks/` directory) — not in scope for these instructions to re-document.
-
+Wiring is implementation-specific and therefore out of scope for this framework document. The naming-activates-procedure pattern is all the framework guarantees; whether a given lens fires voluntarily or via hook is a deployment choice downstream of the framework itself. For hook mechanics in Claude Code CLI, see the official Claude Code documentation on hooks. How those hooks are configured for any particular PHAIM-like deployment is a separate choice made by the deployment author.
 ---
 
 ## Part 10c: Language considerations
