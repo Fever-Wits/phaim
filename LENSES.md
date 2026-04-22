@@ -91,7 +91,21 @@ This distinction is load-bearing. A physical optical lens refracts rays; a cogni
 
 The geometric parallel is not decorative. "Point of view" in English and *гледна точка* in Bulgarian both encode perspective as a spatial *position* — a point in a conceptual space. A lens is what lies between that position and the subject. Multiple cognitive viewpoints converging on one problem is exactly the geometry of the Prism (defined below) and of the Panoptic mode of operation.
 
-Within this viewpoint framing, the classical physics taxonomy of lenses maps onto three complementary reasoning moves. The first two correspond to curvature (convex and concave); the third corresponds to tinting (colored or polarized filters that suppress most of the field so a specific signal stands out).
+A practical consequence of this etymology deserves its own mention, because it affects how the framework travels across languages.
+
+The conceptual chain *гледна точка → гледам през → леща* is native in Bulgarian — each step follows the previous one as ordinary language, not as metaphor stretched across domains. In English, "point of view → look through → lens" is looser: "point of view" does not evoke "looking through" as immediately, and "lens" carries stronger optical-engineering connotations than viewpoint ones. The Bulgarian chain is a native path; the English chain is a translation of a native path.
+
+This is not incidental. The framework as a whole was developed through practice in Bulgarian, then translated to English for publication. The English term "lens" stands at the end of a chain that was walked in Bulgarian first.
+
+Two observations follow, and they should not be confused with each other.
+
+First, a general property of language models: different tokens activate different neighboring concept clusters. "Леща" and "lens" are different tokens for a model, with different neighbors in the embedding space. Translations preserve the denotational reference but not the surrounding semantic field. This is mechanical, not specific to this framework.
+
+Second, what this means for *this* framework specifically is an open empirical question. The author has verified that lens invocation works in both Bulgarian and English — naming a lens by its catalog name produces the expected procedural shift in both languages. Whether the two activations are identical, near-equivalent, or meaningfully different has not been measured and is left for readers with the resources to test properly. The framework is open-source; the measurement is possible; the author invites anyone interested to run it.
+
+The practical ask, for now: readers who want to explore the framework at its source can read it in Bulgarian where the conceptual chain is native, or seed their working context deliberately in the target language to rebuild the neighborhood that translation left behind. Operating instructions for how to do this are in `LENS-OPERATING-INSTRUCTIONS.md` under "Language considerations."
+
+Within this viewpoint framing, the classical physics taxonomy of lenses maps onto three complementary reasoning moves.
 
 - **Convex (converging) moves** — multiple viewpoints synthesized into a single focal insight. Examples: Panoptic Prism (all relevant lenses applied to one problem, answer emerges at their intersection), Lens Finder (many natural-language descriptions narrow to one canonical name), Best-Path Selection (several firing rules → one audited winner).
 - **Concave (diverging) moves** — one viewpoint expanded into many. Examples: Kaleidoscope Trigger (one problem → exhaustive question list), Optometrist (current framing → new expert viewpoint synthesized), Analogical Domain Mapping (one problem → multiple non-source-domain perspectives), Anti-Obvious Filter (first three solutions → three more that address their dismissal).
