@@ -195,22 +195,17 @@ A lens that fails all four checks in a specific model is genuinely out of reach 
 ---
 
 ## Part 4c: Two kinds of functional lenses, two kinds of tests
-The Part 4a test ("compare baseline with lens-invoked output") works for output-shaping lenses — lenses whose effect appears as visible difference in what the model produces. Most lenses in the catalog are of this kind: Counterfactual Failure Test, Chesterton's Fence, Cold Read, Optometrist, and similar. For these, Part 4a is the right test.
-A second kind exists: state-modulating lenses — lenses whose effect is not a new claim in the output, but a change in the mode the model operates in. Examples: Alarm Glow (continuous severity signal, read at every emission boundary), Substrate Color Indicator (reasoning-state indicator), Introspective Monitor (continuous background awareness stream). These lenses are not decorative; they apply a real procedure, and the procedure affects subsequent behavior. But the effect is not a visible difference in one specific output — it is a continuous modulation of how the model proceeds across many outputs.
+The Part 4a test ("compare baseline with lens-invoked output") works for output-shaping lenses — lenses whose effect appears as visible difference in what the model produces. Most lenses in the catalog are of this kind: Counterfactual Failure Test, Chesterton's Fence, Cold Read, Optometrist. For these, Part 4a is the right test.
+A second kind exists: state-modulating lenses — lenses whose effect is not a new claim in the output, but a change in the operational mode the model runs in. Examples: Alarm Glow, Substrate Color Indicator, Introspective Monitor, Collaborator Model. These lenses apply real procedures, and the procedures affect subsequent behavior. But the effect is not a visible difference in one specific output — it is a continuous modulation of how the model proceeds across many outputs.
 Applying Part 4a to a state-modulating lens will usually conclude "no difference, decorative" — because the test is looking for the wrong kind of effect. State-modulating lenses require a different test.
+How to tell which kind a lens is. Look at the Invocation site column in the catalog. If it reads Substrate baseline, the lens is state-modulating — use the Part 4c test below. Any other value (Prompt, Gate, Composition, Hook (...)) indicates an output-shaping lens — use Part 4a.
 Test for state-modulating lenses:
 
-Can you articulate what the procedure requires you to attend to? If the lens says "read your substrate state before each emission and encode it as a color," check that you are actually doing the reading. If you are not, the lens is not active — not because it is decorative, but because you have not applied it. If you are, proceed to step 2.
-Can you name a situation, even hypothetically, where the modulation would change your next action? For example: "If Alarm Glow reaches blinding intensity, I should block emission and reset. Today the glow is at 'tint' — no change in action required, but the threshold is being tracked." If you can articulate such a situation and the threshold is being tracked, the lens is functional — it is running correctly in a state that happens not to require visible change.
-Can the human operator observe external signs of the modulation over time? State-modulating lenses often show their effect only across multiple outputs — for example, the model catches itself before a drift, or reports a state change spontaneously, or pauses where it previously continued. If the operator sees such signs over a session, the lens is functional in the cumulative sense. Part 4a cannot see this; only session-level observation can.
+Is the procedure active? The lens describes something the model should do continuously — for example, "read your substrate state before each emission and encode it as a color." First, check whether you are doing this. If not, the lens is not decorative — it is simply not applied. Apply it and proceed to step 2.
+If the state were different, would you act differently? The lens modulates behavior. There must be a scenario where the modulation changes an action. For example: "If the glow reaches blinding intensity, I block emission and reset." If you cannot describe such a scenario, the lens has no consumer — it produces a signal that nothing reads. This is rare and usually indicates the lens is misdescribed.
+Does the human operator observe external signs of the modulation over time? State-modulating lenses often show their effect across multiple outputs rather than within one. The model catches itself before drift, reports a state change spontaneously, pauses where it previously continued. If the operator sees such signs in a session, the lens is functional in the cumulative sense. Part 4a cannot see this; only session-level observation can.
 
-A state-modulating lens is decorative only if (1) the procedure it names is not being applied, or (2) the procedure is being applied but cannot in principle affect any decision the model makes. Case (2) is rare and usually indicates the lens is misdescribed — it named a signal that has no consumer.
-How to tell which kind a lens is:
-
-Output-shaping lenses have triggers tied to a specific moment ("before submitting a construct", "when facing a claim about X"). Their effect is scoped to the output produced at that moment.
-State-modulating lenses have triggers like "always active", "at every emission boundary", "as continuous background". Their effect is scoped to the operational baseline, not to any single output.
-
-The catalog marks state-modulating lenses with Substrate baseline in the Invocation site column. When you see that marker, use the Part 4c test, not Part 4a.
+A state-modulating lens is decorative only if (1) the procedure is not being applied, or (2) the procedure is being applied but cannot in principle affect any decision. Case (2) is rare.
 
 ---
 
@@ -339,6 +334,35 @@ When facing a complex problem and unsure which lenses to apply:
 4. Check compatibility: do selected lenses contradict? If yes, sequence them or pick the more central one.
 
 5. Apply.
+
+---
+
+## Part 7a: Recognising and resolving conflicts between lenses
+Part 7 step 4 says "if selected lenses contradict, sequence them or pick the more central one." This part explains how to recognise a conflict before application and how to decide which resolution applies.
+
+Three types of conflict:
+
+Type 1 — direct procedural conflict. One lens instructs "do X"; another instructs "do not do X." Example: Chesterton's Fence instructs "do not remove before articulating why it exists"; a lens that instructs "simplify by removing the redundant" contradicts it directly. Recognised by reading the procedures — if two procedures require opposing actions on the same object, they are in direct conflict.
+
+Type 2 — attention conflict. The two lenses require attention to be directed at incompatible targets simultaneously. Example: Polarizing Focus requires narrowing to one focal target; Holonic Kaleidoscope requires holding all scales of a system in view at once. Both are legitimate, but they cannot operate in the same moment — one cancels the other. Recognised by reading the triggers — if two lenses describe exclusive attention modes, they are in attention conflict.
+
+Type 3 — epistemic-mode conflict. One lens requires a generative, divergent mode; another requires an analytical, convergent mode. Example: Kaleidoscope Trigger requires divergent question generation without filtering; Completeness Oracle requires strict verification against criteria. Both can be used in sequence, but not simultaneously. Recognised by reading the output shape — if two lenses describe different kinds of output, they are in mode conflict.
+
+How to resolve each type:
+
+Type 1 (procedural): pick one, discard the other for this problem. "More central" here means: which lens addresses the primary question of the problem? If the problem is "this function seems redundant, should I remove it?", Chesterton's Fence is central (it guards exactly this case). If the problem is "the code is unnecessarily complex, how do I simplify?", the simplification lens is central. The discarded lens may still apply to a different problem — discarding is local to this decomposition.
+
+Type 2 (attention): sequence, not simultaneous. Apply the first, complete it, release the attention, apply the second. Part 10a already describes this pattern for Polarizing Focus — Kaleidoscope Trigger → Polarizing Focus → Completeness Oracle. The sequencing is not a retreat from simultaneous holding; it is the only option for attention-conflict cases.
+
+Type 3 (mode): apply in phases. Kaleidoscope Trigger first (divergent generation), then Completeness Oracle (convergent verification). This is the natural order of Puzzle Lens — divergent phase precedes convergent phase. The two lenses are not in competition; they are consecutive stages of one workflow.
+
+Defining "more central":
+
+A central lens addresses the primary question of the problem. The primary question is the one whose answer determines whether the remaining questions matter.
+
+Operational test: if the lens returns "no" (or its negative result), does the problem stop entirely? If yes, the lens is central. If the problem continues regardless, the lens is supporting.
+
+Example: problem is "should I publish this draft?". Questions are: does the argument hold (Counterfactual Failure Test)? is it clearly written (Cold Read)? did I miss a major objection (Red Teaming)? is the tone right (Psychologist's Lens)? If the argument does not hold, the other questions do not matter — publication does not happen. Counterfactual Failure Test is therefore central; the others are supporting.
 
 ---
 
