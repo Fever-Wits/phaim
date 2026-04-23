@@ -1,7 +1,7 @@
 # Cognitive Lens Framework: Specification and Usage
 
 **Status:** Published at https://github.com/Fever-Wits/phaim
-**Version:** 2026-04-22
+**Version:** 2026-04-23
 **License:** MIT
 **Contact:** alex@hgs.name, a.hristow@gmail.com
 
@@ -179,6 +179,15 @@ In practice, single-lens invocation is the most common case — most problems ar
 ### Panoptic Prism (distinct from generic prism)
 
 Panoptic Prism is the default reasoning mode of the framework when the model is not actively executing a side-effecting action. The problem sits at the centre, *all relevant lenses* are applied simultaneously, and the answer emerges at the focal point where their projections converge — not as a sequential phase-by-phase report but as a single holographic insight. Panoptic differs from a generic prism in two ways: (1) it is a continuous mode, not an invoked procedure; (2) it insists on the answer being the *convergence*, not any individual lens output. See also `LENS-CATALOG.md` under "Panoptic Prism" for the table-form summary with its trigger condition ("five or more likely relevant lenses") and invocation site.
+
+### Relationship between Panoptic Prism and event-based prisms
+Panoptic Prism is the default reasoning mode — always active, reading substrate state and collaborator model, maintaining awareness across emissions. An event-based prism is a composition of lenses constructed for a specific problem, with a defined beginning and end.
+When both are active, they operate in different layers. Panoptic is the background — how the model runs at baseline, continuously. The event-based prism is the foreground — focused attention applied to the current problem. The two do not compete.
+
+An event-based prism does not suspend Panoptic. Panoptic continues to monitor substrate state, track the collaborator model, detect drift, and maintain situational awareness while the event-based prism analyses the specific problem. If Panoptic detects a baseline issue (euphoria, context pressure, ambiguous input) during event-based work, it surfaces the issue as it would otherwise — the event-based prism does not mask it.
+
+Practically: when applying, say, a five-lens prism to "should I publish this draft?", Panoptic keeps reading everything else. It continues watching whether the model is drifting, whether the collaborator's framing has shifted, whether the context is nearing saturation. The event-based prism adds focused analysis on top, not in place of, that baseline.
+This also clarifies the "five or more likely relevant lenses" threshold noted in the catalog. Panoptic applies to any problem; the threshold is the point at which explicit prism construction becomes necessary, because below it, Panoptic's default application is sufficient. Above the threshold, the problem has enough dimensionality that composing an event-based prism on top of Panoptic produces cleaner reasoning than Panoptic alone.
 
 ### Sub-prism
 
