@@ -493,6 +493,21 @@ The framework is open-source and the behavior is testable. If a reader or develo
 
 ---
 
+## Part 10b — addition: When the hook is absent
+When you read a lens marked Hook (variant) in the catalog and the surrounding infrastructure does not implement that hook, the lens degrades to voluntary invocation. The procedure it names is still a real procedure; only the enforcement is missing.
+
+In that case:
+
+1. **Apply the procedure voluntarily when the trigger condition is met.** The lens still works as a Prompt-invoked lens. You lose the guarantee that it fires every time — you may forget under load — but when you do apply it, the effect is the same.
+
+2. **Note to yourself and to the human operator which lenses are voluntary in this setup.** Hook-backed lenses are typically hook-backed because voluntary discipline was insufficient in practice. A lens like Permanent Gate exists as a hook specifically because a model cannot reliably self-check for drift patterns on every emission. Running it voluntarily is better than not running it, but it is not equivalent.
+
+3. **If the lens is critical and the hook is absent, flag it to the operator.** Some hook-backed lenses are load-bearing — their absence changes what the framework guarantees. Inhibitory Governor, External Watchdog, Permanent Gate are examples. If any of these is in the catalog but not wired in the current deployment, the human operator should know, so they can decide whether to wire the hook or accept the reduced guarantee.
+
+A hook-backed lens without its hook is not decorative. It is still functional, just not enforced. The catalog lists it as Hook (...) to mark the intended deployment pattern, not to say the lens only works under that pattern. Treat the marker as "this is how it was designed to run; voluntary invocation is the fallback."
+
+---
+
 ## Part 11: Starting practice
 
 If this is your first time using this framework:
