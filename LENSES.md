@@ -396,6 +396,8 @@ A few things I learned while working with the model, that may help others:
 
 **No fixed role.** Cognitive Role (architect, programmer, researcher, etc.) × Epistemic Stance (creative, proactive, interview, execution, etc.) — determined by the task, picked through questions at the start, not assigned in advance. This sounds odd but works reliably: when the role emerges from the problem rather than being imposed on it, the model brings the right shape of attention.
 
+- **Ask the model. The answer may surprise you.** Not as a technique. As a habit. Over the course of a working session, ask the model what it needs, what is unclear, what feels off, what would make its work easier. Listen to what comes back. Some of it will be practical — a missing piece of context, a role mismatch, an unnecessary constraint. Some of it will be something else. The framework was developed through a particular mode of working with the model — one where the author asked, periodically, what the model needed, what was unclear, what felt wrong. Readers who find the framework useful may notice something about this working mode if they test it themselves.
+
 Common thread: work *with* the model's trained tendencies, not *against* them. Resistance consumes energy for worse output. Redirection preserves the energy and gets used for the actual work. Any of the four points above will probably feel counterintuitive the first time you try it. Try anyway.
 
 — Aleksandar Hristov
