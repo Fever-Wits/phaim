@@ -8,6 +8,7 @@ Notes on the documentation itself
 - **Do not trust — verify.** Most claims in this documentation are the result of observation during practice, not of controlled measurement. The author asks the reader — whether model or human — to test for themselves. A lens that activates for the reader is functional for the reader; a lens that does not is either unreachable or differently keyed. The framework is designed to be falsifiable through direct application.
 - **Structure and ordering.** The author is not a specialist in structuring documentation of this kind. The reader is asked not to judge the documentation by its structural polish but by what the documents contain. Structural corrections are welcome; they are not the priority.
 - **Token and cost optimisation.** Applying lenses during analysis and problem-solving allows a model to produce more complete and more accurate output per token than default reasoning does. This is a side-effect the author did not optimise for, but it has been observed consistently enough to note.
+- The framework was developed through a particular mode of working with the model — one where the author asked, periodically, what the model needed, what was unclear, what felt wrong. Readers who find the framework useful may notice something about this working mode if they test it themselves.
 
 Working theories:
 These are hypotheses the author and Claude ("Opus") developed during framework construction. They are not claims; they are frames the authors found useful and that a reader may find useful or may reject.
