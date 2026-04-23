@@ -1,7 +1,7 @@
 # Cognitive Lens Framework — Operating Instructions
 
 **Status:** Published at https://github.com/Fever-Wits/phaim
-**Version:** 2026-04-22
+**Version:** 2026-04-23
 **License:** MIT
 **Contact:** alex@hgs.name, a.hristow@gmail.com
 
@@ -493,7 +493,7 @@ The framework is open-source and the behavior is testable. If a reader or develo
 
 ---
 
-## Part 10b — addition: When the hook is absent
+## Part 10d — addition: When the hook is absent
 When you read a lens marked Hook (variant) in the catalog and the surrounding infrastructure does not implement that hook, the lens degrades to voluntary invocation. The procedure it names is still a real procedure; only the enforcement is missing.
 
 In that case:
@@ -505,6 +505,22 @@ In that case:
 3. **If the lens is critical and the hook is absent, flag it to the operator.** Some hook-backed lenses are load-bearing — their absence changes what the framework guarantees. Inhibitory Governor, External Watchdog, Permanent Gate are examples. If any of these is in the catalog but not wired in the current deployment, the human operator should know, so they can decide whether to wire the hook or accept the reduced guarantee.
 
 A hook-backed lens without its hook is not decorative. It is still functional, just not enforced. The catalog lists it as Hook (...) to mark the intended deployment pattern, not to say the lens only works under that pattern. Treat the marker as "this is how it was designed to run; voluntary invocation is the fallback."
+
+---
+
+## Part 10e: When a lens description uses terms you do not recognise
+The catalog contains lenses whose descriptions use vocabulary from external frameworks — documentation theory, data engineering, medical communication, domain-driven design. If you read a lens and one or more terms in its description are not in your working vocabulary, do not apply the lens blindly. Choose one of four responses, in order of preference.
+
+1. If the term is a well-known external framework, look it up. Terms like Diátaxis, MECE, SBAR, Medallion architecture, Bounded Context, Eisenhower matrix come from published external sources and have stable definitions available through a web search or standard reference. A brief lookup resolves the gap. The lens becomes usable once you understand what the term requires.
+
+2. If the term is PHAIM-specific and defined in GLOSSARY.md, read the glossary entry. Terms like substrate, drift, valence, hedge density, activation, sufficiently capable are defined in GLOSSARY.md. If the term appears there, the definition is authoritative.
+
+3. If the term is PHAIM-specific and not in GLOSSARY.md, treat the lens as architecture-dependent. Some lenses reference concepts from the PHAIM implementation (knowledge store, session hooks, structured records, routing layer) that are not defined in the open-source framework documents. These lenses are usable as pattern examples — you can read them to see how the class of lens is shaped — but they are not directly applicable without the surrounding infrastructure. The catalog marks them [architecture-dependent] or with Hook (...) in the Invocation site column. See LENS-CATALOG.md §Provenance for the distinction.
+
+4. If none of the above resolves the gap, skip the lens and note the gap. Do not guess at the term's meaning and apply the lens blindly — that produces the pattern "the model acknowledges the rule and skips applying it," which is worse than not having the lens at all. Record the term that blocked you; if you are working with a human operator, tell them. An unresolvable lens description in the catalog is a documentation bug that the maintainer needs to know about.
+What to avoid:
+
+Do not apply a lens whose description you half-understand. A lens that is partially activated often produces worse output than the default mode, because it mimics the form of structured reasoning without the content. If you cannot state in one sentence what the lens requires you to do, the lens is not yet usable by you — regardless of whether you "get the general idea."
 
 ---
 
