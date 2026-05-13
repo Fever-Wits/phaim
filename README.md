@@ -50,9 +50,9 @@ teach new capabilities; it makes existing ones callable.
 
 Framework documentation:
 
-* [LENSES.md](LENSES.md) — Framework specification (definitions, cross-model usage, attribution)
-* [LENS-OPERATING-INSTRUCTIONS.md](LENS-OPERATING-INSTRUCTIONS.md) — Operating instructions for AI models
-* [LENS-CATALOG.md](LENS-CATALOG.md) — Starting catalog of named lenses (alphabetical, with "lens name", "what it does", "when to apply", and "invocation site" columns). The names are the activation keys — invoking a lens by its exact name is how the underlying procedure is retrieved, so the name column is load-bearing, not decorative. Base examples, not an exhaustive list — the catalog grows with use. Lenses are an open vocabulary, and composition into prisms and sub-prisms produces more than any catalog can list.
+* [LENSES.md](operating-frame/lens/LENSES.md) — Framework specification (definitions, cross-model usage, attribution)
+* [LENS-OPERATING-INSTRUCTIONS.md](operating-frame/lens/LENS-OPERATING-INSTRUCTIONS.md) — Operating instructions for AI models
+* [LENS-CATALOG.md](operating-frame/lens/LENS-CATALOG.md) — Starting catalog of named lenses (alphabetical, with "lens name", "what it does", "when to apply", and "invocation site" columns). The names are the activation keys — invoking a lens by its exact name is how the underlying procedure is retrieved, so the name column is load-bearing, not decorative. Base examples, not an exhaustive list — the catalog grows with use. Lenses are an open vocabulary, and composition into prisms and sub-prisms produces more than any catalog can list.
 
 If no catalogued lens fits the situation, name what you need. Any sufficiently capable model can generate a new lens on demand — the catalog is a shared vocabulary, not a gate. A user can also ask the model to find or construct the appropriate lens for the problem at hand. The test of a lens is whether naming it activates a useful procedure, not whether it appears in any list.
 
@@ -64,7 +64,7 @@ specifics.
 ## Two Lenses to Add Immediately — for anti-hallucination
 
 If you are working with a language model and are not sure how to prompt it well, these two lenses are the cheapest, highest-impact additions you can make. Name them at the model — the name itself activates the procedure.
-Both appear in [LENS-CATALOG.md](LENS-CATALOG.md) under standard names.
+Both appear in [LENS-CATALOG.md](operating-frame/lens/LENS-CATALOG.md) under standard names.
 
 Both lenses share a single principle: do not trust, verify. They do not make the model more reliable in isolation — they transfer epistemic authority back to you. The model tells you where it might be wrong (Cold Read) and where it does not know (Ignorance Probe). Your job is to check. This is partnership, not a guarantee of correctness.
 
@@ -93,6 +93,19 @@ Together, these two lenses reduce most hallucination symptoms in practice. The
 model says what it actually thinks and, just as importantly, what it does
 not know. That is the entry point to working with a model as a partner
 rather than as a vending machine.
+
+## Agent Configuration (agent.md)
+
+Alongside the lens framework, the author's working `agent.md` — the model-side
+configuration developed through extended practice — is published as a working
+example in [`operating-frame/agent/`](operating-frame/agent/):
+
+* [`agent.md`](operating-frame/agent/agent.md) — the configuration file itself (in Bulgarian)
+* [`AGENT-BACKGROUND.md`](operating-frame/agent/AGENT-BACKGROUND.md) — how it came to be
+* [`AGENT-VISUALIZATION-SPEC.md`](operating-frame/agent/AGENT-VISUALIZATION-SPEC.md) — specification for a 3D visualization tool that surfaces the agent.md graph structure
+
+The agent.md is published as a working example, not as a recipe. The background
+explains the principles behind it; readers configure for their own work.
 
 ## Status
 
@@ -134,6 +147,8 @@ The lenses in this framework are not claimed as original inventions. They are co
 The specific operationalisation — lens / meta-lens / prism / meta-prism / sub-prism / puzzle / meta-puzzle framework, the taxonomy, the catalog structure, and the naming conventions — is the work of Aleksandar Hristov (2026), developed through extended cross-model practice.
 
 Full attribution, including the cognitive science traditions this framework converges with, is in `LENSES.md`.
+
+Sources consulted during the development of this project — including the ones whose titles alone may have influenced the work — are listed in [`SOURCES.md`](SOURCES.md). The author does not claim that every source is mentioned there; if your work informed any part of this project and is not credited, please get in touch.
 
 ## License
 
