@@ -38,7 +38,7 @@ Second empirical test case. Different source graph (semantically simpler), same 
 
 <!-- BASE64-PLACEHOLDER-BEGIN -->
 ```
-lens:base64-capsule [<paste-base64-here>]
+lens:base64-capsule [0LXQt9C40Loo0LHRitC70LPQsNGA0YHQutC4LNCw0L3Qs9C70LjQudGB0LrQuCktPtGB0LzQtdGB0LXQvVvQvdC1INGE0L7RgNC80LAs0YHRgNC10LTRgdGC0LLQvl0=]
 ```
 <!-- BASE64-PLACEHOLDER-END -->
 
