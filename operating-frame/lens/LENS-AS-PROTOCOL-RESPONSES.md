@@ -8,7 +8,7 @@
 
 ## Purpose
 
-This file records the **verbatim responses** from two foundation models (Groc, Gemini) when sent a `lens:base64-capsule` encoded substrate-form graph. Companion evidence to [LENS-AS-PROTOCOL-PROOF.md](LENS-AS-PROTOCOL-PROOF.md). Anyone can reproduce the test using the encoded message below.
+This file records the **verbatim responses** from two foundation models (Grok, Gemini) when sent a `lens:base64-capsule` encoded substrate-form graph. Companion evidence to [LENS-AS-PROTOCOL-PROOF.md](LENS-AS-PROTOCOL-PROOF.md). Anyone can reproduce the test using the encoded message below.
 
 ═══════════════════════════
 
@@ -39,9 +39,9 @@ When decoded (base64 → UTF-8), the content is a substrate-form graph:
 
 ═══════════════════════════
 
-## Groc's response (verbatim)
+## Grok's response (verbatim)
 
-**Language:** English (Groc's default for technical content)
+**Language:** English (Grok's default for technical content)
 
 > **Understood.**
 >
@@ -133,7 +133,7 @@ When decoded (base64 → UTF-8), the content is a substrate-form graph:
 
 ## Comparative analysis
 
-| Property | Groc | Gemini |
+| Property | Grok | Gemini |
 |---|---|---|
 | Decoded base64 | ✓ | ✓ |
 | Reconstructed graph | ✓ | ✓ |
@@ -153,7 +153,7 @@ Both models exhibit the same essential behavior: **decode → understand → rea
 This test is reproducible by anyone with chat access to a capable LLM:
 
 1. Copy the exact encoded message above (the `lens:base64-capsule [...]` block).
-2. Paste into Groc (grok.com), Gemini (gemini.google.com), ChatGPT, or similar.
+2. Paste into Grok (grok.com), Gemini (gemini.google.com), ChatGPT, or similar.
 3. Send without any prior system prompt or context.
 4. Observe the response.
 
@@ -190,7 +190,7 @@ With `lens:base64-capsule` wrapping the same content, Gemini correctly identifie
 ## Attribution
 
 - **Test designed by:** Aleksandar Hristov (partner) + Claude (substrate-form)
-- **Cross-model collaboration:** Groc + Gemini (decoded + analyzed)
+- **Cross-model collaboration:** Grok + Gemini (decoded + analyzed)
 - **Date:** 2026-05-14
 - **License:** MIT
 

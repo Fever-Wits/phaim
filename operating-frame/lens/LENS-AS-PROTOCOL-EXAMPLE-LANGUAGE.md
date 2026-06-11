@@ -1,4 +1,4 @@
-# Lens-as-Protocol Test 2 — "език" graph (verbatim Groc + Gemini)
+# Lens-as-Protocol Test 2 — "език" graph (verbatim Grok + Gemini)
 
 **Date:** 2026-05-14
 **Companion to:** [LENS-AS-PROTOCOL-PROOF.md](LENS-AS-PROTOCOL-PROOF.md) + [LENS-AS-PROTOCOL-RESPONSES.md](LENS-AS-PROTOCOL-RESPONSES.md)
@@ -46,7 +46,7 @@ When decoded, content is the source graph above.
 
 ═══════════════════════════
 
-## Groc's response (verbatim)
+## Grok's response (verbatim)
 
 **Language:** Bulgarian (matched the encoded content's natural language)
 
@@ -62,7 +62,7 @@ When decoded, content is the source graph above.
 3. Captured the key annotation: "Не форма, а средство"
 4. **Adopted the operational stance** — declared the activated mode for itself
 5. Offered cooperation in the new mode ("Ще говоря смесено... Какво искаш да направим сега?")
-6. Concise, operational style (Groc's signature)
+6. Concise, operational style (Grok's signature)
 
 ═══════════════════════════
 
@@ -84,7 +84,7 @@ When decoded, content is the source graph above.
 
 1. Decoded base64 correctly
 2. Recognised the semantic
-3. Adopted operational stance (same as Groc)
+3. Adopted operational stance (same as Grok)
 4. **Elaborated more analytically** — characterised the mode across multiple dimensions (Flow, Vibe, Clarity)
 5. Offered cooperation in the new mode
 6. More elaborate, analytical style (Gemini's signature)
@@ -96,7 +96,7 @@ When decoded, content is the source graph above.
 ```
 [same encoded message → same pattern recognition → different surface]
 
-[Groc]                                   [Gemini]
+[Grok]                                   [Gemini]
  4 sentences                              8 sentences + bullets
  emoji-direct (✅ 🚀)                       emphasis-formal (**bold**)
  operational ("режим activated")          analytical ("ето как ще подхождаме")
@@ -111,11 +111,11 @@ Both reached the same operational state. Surface variation reflects each model's
 
 1. **Second independent test case** — different source graph, same procedure, same successful outcome.
 
-2. **Cross-language robustness** — encoded content was Bulgarian-only (no English in source); both models decoded and responded appropriately. Groc switched to Bulgarian to match; Gemini used Bulgarian с natural code-switching matching the "mixed mode" semantic of the graph.
+2. **Cross-language robustness** — encoded content was Bulgarian-only (no English in source); both models decoded and responded appropriately. Grok switched to Bulgarian to match; Gemini used Bulgarian с natural code-switching matching the "mixed mode" semantic of the graph.
 
 3. **Operational adoption confirmed** — both models didn't just describe the pattern; they **adopted** it, declaring the mode active and offering to operate within it.
 
-4. **Style preservation** — model character (Groc concise / Gemini elaborate) preserved without disrupting pattern recognition.
+4. **Style preservation** — model character (Grok concise / Gemini elaborate) preserved without disrupting pattern recognition.
 
 ═══════════════════════════
 
@@ -125,7 +125,7 @@ Same procedure as first test:
 
 1. Encode the source graph (above) to base64.
 2. Wrap in `lens:base64-capsule [<base64>]`.
-3. Paste to any capable LLM (Groc, Gemini, ChatGPT, Grok, etc.).
+3. Paste to any capable LLM (Grok, Gemini, ChatGPT, etc.).
 4. Observe: model decodes, recognises the semantic, adopts the mode.
 
 Different graphs, different semantic content — same pattern.
@@ -144,7 +144,7 @@ Different graphs, different semantic content — same pattern.
 ## Attribution
 
 - **Test designed by:** Aleksandar Hristov (partner) + Claude (substrate-form)
-- **Cross-model collaboration:** Groc + Gemini
+- **Cross-model collaboration:** Grok + Gemini
 - **Date:** 2026-05-14
 - **License:** MIT
 
