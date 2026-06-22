@@ -4,8 +4,8 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-# ⚠ ПРОДУКЦИЯ: пусни демона като НЕ-root потребител — щета при пробив = само неговите права.
-# Разкоментирай и настрой (потребителят трябва да съществува на сървъра):
+# ⚠ PRODUCTION: run the daemon as a NON-root user — damage on a breach = only that user's privileges.
+# Uncomment and configure (the user must exist on the server):
 #User=shunt
 #Group=shunt
 EnvironmentFile=/etc/shunt/daemon.env

@@ -2,29 +2,29 @@
 """
 shunt — pretool.py · PreToolUse hook (matcher: Bash)
 
-Прозрачно отклонява bash командите на агента към избрана отдалечена машина.
-Превключване: @<alias> / @local / @status — PER-SESSION (не застъпва паралелни сесии).
+Transparently redirects the agent's bash commands to a chosen remote machine.
+Switching: @<alias> / @local / @status — PER-SESSION (does not clash across parallel sessions).
 
-Два транспорта (зададени per-host в ~/.config/shunt/hosts):
-  ssh     — SECURE: ssh + ControlMaster (нула отворен порт, нула споделен токен,
-            криптирано). Доказано: cwd state-file per session, live streaming, скорост.
-  daemon  — NONSECURE: TCP + токен (бърз на доверена LAN). Токенът минава през ENV
-            на inline клиента (не argv → не се вижда в `ps` за други локални потребители).
-            NB: командата (с ENV-присвояване) влиза в transcript-а → daemon режим е само
-            за доверена LAN; за нечувствителна мрежа ползвай ssh режим (там няма токен).
+Two transports (configured per-host in ~/.config/shunt/hosts):
+  ssh     — SECURE: ssh + ControlMaster (zero open ports, zero shared token,
+            encrypted). Proven: cwd state-file per session, live streaming, speed.
+  daemon  — NONSECURE: TCP + token (fast on a trusted LAN). The token is passed via the ENV
+            of the inline client (not argv → not visible in `ps` to other local users).
+            NB: the command (with the ENV assignment) ends up in the transcript → daemon mode is
+            only for a trusted LAN; for an untrusted network use ssh mode (no token there).
 
-Защо hook + updatedInput (а не подмяна на shell-а): официален, документиран механизъм;
-независим сме от недокументирани env-настройки.
+Why hook + updatedInput (rather than replacing the shell): official, documented mechanism;
+we stay independent of undocumented env settings.
 
-КРИТИЧНО: пренаписаната команда тече в строг sandbox (root, без ~/.config/shunt, НО мрежа
-OK). Затова daemon клиентът е SELF-CONTAINED inline (нула файлове); ssh клиентът ползва
-`ssh` binary, който е наличен в sandbox-а.
+CRITICAL: the rewritten command runs in a strict sandbox (root, no ~/.config/shunt, BUT network
+OK). That's why the daemon client is SELF-CONTAINED inline (zero files); the ssh client uses the
+`ssh` binary, which is available in the sandbox.
 """
 import json, sys, os, shlex, binascii
 
 CONF = os.environ.get("SHUNT_CONF", os.path.expanduser("~/.config/shunt"))
 
-# --- self-contained inline daemon клиент (token идва през ENV SHUNT_TOK, не през argv) ---
+# --- self-contained inline daemon client (token comes via ENV SHUNT_TOK, not via argv) ---
 # argv: cmd host port sid mark
 INLINE_DAEMON = r'''
 import socket,json,sys,os
@@ -61,7 +61,7 @@ def conf_read(name):
 
 
 def emit(command):
-    """Върни пренаписана команда към Claude Code и излез."""
+    """Return a rewritten command to Claude Code and exit."""
     print(json.dumps({"hookSpecificOutput": {
         "hookEventName": "PreToolUse",
         "permissionDecision": "allow",
@@ -74,7 +74,7 @@ def echo(msg):
 
 
 def resolve_host(alias):
-    """hosts ред: `<alias> <transport> <target> [key=...]` → dict или None."""
+    """hosts line: `<alias> <transport> <target> [key=...]` → dict or None."""
     for line in conf_read("hosts").splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
@@ -86,15 +86,15 @@ def resolve_host(alias):
 
 
 def ssh_command(host, cmd, sid):
-    """SECURE: ssh + ControlMaster; cwd се пази per session чрез remote state-file."""
+    """SECURE: ssh + ControlMaster; cwd is kept per session via a remote state-file."""
     key = None
     for o in host["opts"]:
         if o.startswith("key="):
             key = os.path.expanduser(o[4:])
-    sock = "/tmp/shunt-cm-%s-%%h-%%p.sock" % sid  # per-session И PER-DESTINATION (%h/%p от ssh) —
-    # иначе @84 после @82 в същата сесия → споделен socket → командите отиват на грешен хост
+    sock = "/tmp/shunt-cm-%s-%%h-%%p.sock" % sid  # per-session AND PER-DESTINATION (%h/%p from ssh) —
+    # otherwise @84 then @82 in the same session → shared socket → commands go to the wrong host
     state = "/tmp/shunt-cwd-%s" % sid
-    # trap EXIT хваща кода + обновява cwd при ВСЯКО излизане (вкл. `exit N` в командата)
+    # trap EXIT captures the code + updates cwd on EVERY exit (incl. `exit N` in the command)
     trap_action = "rc=$?; pwd > %s 2>/dev/null; exit $rc" % shlex.quote(state)
     remote = (
         'cd "$(cat %s 2>/dev/null || echo "$HOME")" 2>/dev/null || cd ~\n' % shlex.quote(state)
@@ -112,7 +112,7 @@ def ssh_command(host, cmd, sid):
 
 
 def daemon_command(host, cmd, sid):
-    """NONSECURE: self-contained inline TCP клиент; случаен маркер на връзка."""
+    """NONSECURE: self-contained inline TCP client; random per-connection marker."""
     h, _, port = host["target"].partition(":")
     port = port or "8766"
     tok = conf_read("token").strip()
@@ -135,13 +135,13 @@ def main():
     target_file = os.path.join(CONF, "target." + sid)
     cmd = (data.get("tool_input") or {}).get("command", "")
 
-    # guard срещу двойно пренаписване (вече-пренаписаната носи маркер на транспорта)
+    # guard against double rewriting (an already-rewritten command carries the transport marker)
     if "__SHUNT_END_" in cmd or "ControlPath=/tmp/shunt-cm-" in cmd:
         sys.exit(0)
 
     s = cmd.strip()
 
-    # shunt CLI командите се изпълняват ЛОКАЛНО (сами правят транспорта) → не пренасочвай
+    # shunt CLI commands run LOCALLY (they do the transport themselves) → do not redirect
     if s == "shunt" or s.startswith("shunt "):
         sys.exit(0)
 
@@ -152,37 +152,37 @@ def main():
         except Exception:
             return ""
 
-    # --- превключватели ---
+    # --- switches ---
     if s == "@local":
         try:
             os.remove(target_file)
         except OSError:
             pass
-        echo("[shunt] режим: ЛОКАЛЕН")
+        echo("[shunt] mode: LOCAL")
 
     if s == "@status":
         t = read_target()
-        echo("[shunt] " + (("ОТДАЛЕЧЕН → " + t) if t else "ЛОКАЛЕН"))
+        echo("[shunt] " + (("REMOTE → " + t) if t else "LOCAL"))
 
     if s.startswith("@") and len(s) > 1 and " " not in s:
         alias = s[1:]
         host = resolve_host(alias)
         if not host:
-            echo("[shunt] непознат хост: " + alias)
+            echo("[shunt] unknown host: " + alias)
         os.makedirs(CONF, exist_ok=True)
         try:
             with open(target_file, "w") as f:
                 f.write(alias)
         except Exception:
             sys.exit(0)
-        echo("[shunt] режим: ОТДАЛЕЧЕН → %s (%s, %s)"
+        echo("[shunt] mode: REMOTE → %s (%s, %s)"
              % (alias, host["target"], host["transport"]))
 
-    # --- отдалечено изпълнение според транспорта ---
+    # --- remote execution depending on transport ---
     alias = read_target()
     if alias:
         host = resolve_host(alias)
-        if not host:               # хостът изчезна от конфига → fallback локално
+        if not host:               # host disappeared from the config → fall back to local
             sys.exit(0)
         if host["transport"] == "ssh":
             emit(ssh_command(host, cmd, sid))

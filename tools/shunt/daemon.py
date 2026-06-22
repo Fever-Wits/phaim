@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
-shunt — daemon.py · NONSECURE транспорт (TCP + токен), за ДОВЕРЕНА LAN.
-За недоверена мрежа ползвай ssh режим (там няма демон, няма токен, няма отворен порт).
+shunt — daemon.py · NONSECURE transport (TCP + token), for a TRUSTED LAN.
+For an untrusted network use ssh mode (no daemon, no token, no open port there).
 
-Протокол (TCP, stdlib): клиент → {"token","cmd","cwd","sid","mark"}\\n ;
-демон → суров stdout/stderr поток + финал <mark><exit>__PWD__<cwd>\\n.
-cwd се пази PER-SESSION (по sid). Маркерът идва ОТ КЛИЕНТА (случаен на връзка) →
-команда, която печата фиксиран низ, не чупи протокола.
+Protocol (TCP, stdlib): client → {"token","cmd","cwd","sid","mark"}\\n ;
+daemon → raw stdout/stderr stream + trailer <mark><exit>__PWD__<cwd>\\n.
+cwd is kept PER-SESSION (by sid). The marker comes FROM THE CLIENT (random per connection) →
+a command that prints a fixed string does not break the protocol.
 
-Сигурност:
-- bind 127.0.0.1 по подразбиране; изричен opt-in за LAN чрез SHUNT_HOST.
-- constant-time сравнение на токена (hmac.compare_digest).
-- стартирай като НЕ-root потребител (systemd unit-ът го прави); root → предупреждение.
+Security:
+- bind 127.0.0.1 by default; explicit opt-in for LAN via SHUNT_HOST.
+- constant-time token comparison (hmac.compare_digest).
+- run as a NON-root user (the systemd unit does this); root → warning.
 
-Конфиг (ENV): SHUNT_TOKEN (задължителен) · SHUNT_PORT (8766) · SHUNT_HOST (127.0.0.1).
+Config (ENV): SHUNT_TOKEN (required) · SHUNT_PORT (8766) · SHUNT_HOST (127.0.0.1).
 """
 import os, sys, json, signal, socketserver, subprocess, threading, time, hmac, shlex
 
@@ -21,7 +21,7 @@ TOKEN = os.environ.get("SHUNT_TOKEN", "")
 PORT  = int(os.environ.get("SHUNT_PORT", "8766"))
 HOST  = os.environ.get("SHUNT_HOST", "127.0.0.1")
 HOME  = os.path.expanduser("~")
-_CWD  = {}            # per-session: sid -> последен cwd
+_CWD  = {}            # per-session: sid -> last cwd
 _LOCK = threading.Lock()
 
 
@@ -60,7 +60,7 @@ class Handler(socketserver.BaseRequestHandler):
         if not os.path.isdir(cwd):
             cwd = HOME
 
-        # trap EXIT хваща кода + печата маркера при ВСЯКО излизане (вкл. `exit N` в командата)
+        # trap EXIT captures the code + prints the marker on EVERY exit (incl. `exit N` in the command)
         trap_action = ('rc=$?; printf "%s%s__PWD__%s\\n" ' + shlex.quote(mark)
                        + ' "$rc" "$(pwd)"')
         wrapped = (
@@ -77,7 +77,7 @@ class Handler(socketserver.BaseRequestHandler):
 
         alive = threading.Event(); alive.set()
 
-        def watch():                 # клиент изключи → убий процес-групата (за `-f`)
+        def watch():                 # client disconnected → kill the process group (for `-f`)
             try:
                 while alive.is_set():
                     if not self.request.recv(1):
@@ -102,7 +102,7 @@ class Handler(socketserver.BaseRequestHandler):
                 nc = tail[mi + len(b"__PWD__"):].decode("utf-8", "replace").strip()
                 if nc and os.path.isdir(nc):
                     with _LOCK:
-                        _CWD[sid] = nc       # запомни cwd за ТАЗИ сесия
+                        _CWD[sid] = nc       # remember cwd for THIS session
         finally:
             alive.clear()
             try: proc.stdout.close()
@@ -126,9 +126,9 @@ class Server(socketserver.ThreadingTCPServer):
 
 if __name__ == "__main__":
     if not TOKEN:
-        sys.stderr.write("shunt daemon: ОТКАЗ — SHUNT_TOKEN не е зададен.\n")
+        sys.stderr.write("shunt daemon: REFUSED — SHUNT_TOKEN is not set.\n")
         sys.exit(2)
     if os.geteuid() == 0:
-        sys.stderr.write("shunt daemon: ПРЕДУПРЕЖДЕНИЕ — вървиш като root; препоръчва се не-root потребител.\n")
-    sys.stderr.write("shunt daemon: слушам %s:%d\n" % (HOST, PORT))
+        sys.stderr.write("shunt daemon: WARNING — running as root; a non-root user is recommended.\n")
+    sys.stderr.write("shunt daemon: listening on %s:%d\n" % (HOST, PORT))
     Server((HOST, PORT), Handler).serve_forever()
