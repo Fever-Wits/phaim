@@ -1,0 +1,17 @@
+[Unit]
+Description=shunt nonsecure daemon (TCP + token remote hands)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# ⚠ ПРОДУКЦИЯ: пусни демона като НЕ-root потребител — щета при пробив = само неговите права.
+# Разкоментирай и настрой (потребителят трябва да съществува на сървъра):
+#User=shunt
+#Group=shunt
+EnvironmentFile=/etc/shunt/daemon.env
+ExecStart=/usr/bin/python3 /opt/shunt/daemon.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
